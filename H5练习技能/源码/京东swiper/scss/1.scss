@@ -1,0 +1,140 @@
+@import "_minix.scss";
+@import "common.scss";
+.wrapper {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    @include direction(column);
+}
+
+header {
+    width: 100%;
+    height: pxTorem(44px);
+    border-bottom: 1px solid #ccc;
+    padding: 0 pxTorem(15px);
+    @include sizing;
+    form {
+        @include box_flex;
+        @include align;
+        width: 100%;
+        height: pxTorem(25px);
+        margin-top: pxTorem(8px);
+        line-height: pxTorem(25px);
+        div {
+            width: 80%;
+            height: 100%;
+            background: rgb(221, 220, 220);
+            .iconfont {
+                font-size: pxTorem(15px);
+                padding: 0 pxTorem(8px);
+                @include sizing;
+            }
+            input {
+                color: rgb(148, 148, 148);
+            }
+        }
+        .iconfont {
+            width: 20%;
+            text-align: center;
+            font-size: pxTorem(18px);
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    height: pxTorem(44px);
+    background: #ccc;
+    border-top: 1px solid #000;
+    ul {
+        @include box_flex;
+        @include align;
+        li {
+            width: 25%;
+            text-align: center;
+            @include box_flex;
+            @include direction(column);
+            .iconfont {
+                font-size: pxTorem(20px);
+            }
+        }
+    }
+}
+
+section {
+    flex: 1;
+    width: 100%;
+    @include box_flex;
+    overflow: hidden;
+    .left {
+        width: 25%;
+        height: 100%;
+        background: rgb(221, 220, 220);
+        overflow: hidden;
+        ul {
+            text-align: center;
+            line-height: pxTorem(60px);
+            li {
+                width: 100%;
+                height: pxTorem(60px);
+            }
+        }
+    }
+    .right {
+        width: 75%;
+        height: 100%;
+        ol {
+            width: 100%;
+            height: pxTorem(60px);
+            display: flex;
+            li {
+                width: pxTorem(50px);
+                height: pxTorem(40px);
+                text-align: center;
+                line-height: pxTorem(50px);
+            }
+        }
+        .swiper-container {
+            width: 100%;
+            .swiper-wrapper,
+            .swiper-slide {
+                width: 100%;
+                height: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        ul {
+            width: 100%;
+            @include box_flex;
+            @include align;
+            text-align: center;
+            flex-wrap: wrap;
+            li {
+                width: 32%;
+                padding: pxTorem(15px) 0;
+                @include sizing;
+                img {
+                    width: pxTorem(60px);
+                    height: pxTorem(60px);
+                }
+                span {
+                    margin-top: pxTorem(15px);
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.bg {
+    background: #fff;
+    color: pink;
+}
+
+.active {
+    color: orange;
+    border-bottom: 2px solid orange;
+}

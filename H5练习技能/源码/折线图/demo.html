@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvs" style="border:1px solid #000" height="730" width="700"></canvas>
+</body>
+<script>
+    var canvas = document.querySelector("#canvs");
+    var ctx = canvas.getContext("2d");
+    var arr = [30, 40, 50, 60, 70, 80];
+    var offset = 100;
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.lineTo(50, 680);
+    ctx.lineTo(680, 680);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.moveTo(40, 60);
+    ctx.lineTo(50, 50);
+    ctx.lineTo(60, 60);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.moveTo(670, 670);
+    ctx.lineTo(680, 680);
+    ctx.lineTo(670, 690);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    for (var i = 0; i <= 5; i++) {
+        ctx.moveTo(50 + offset * i, 680);
+        ctx.lineTo(50 + offset * i, 690);
+        ctx.stroke();
+        ctx.font = "16px normal";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(i + 1, 50 + offset * i, 710);
+    }
+    ctx.closePath();
+
+    ctx.beginPath();
+    arr.map(function(item, i) {
+        ctx.moveTo(50, 680 - offset * i);
+        ctx.lineTo(40, 680 - offset * i);
+        ctx.stroke();
+        ctx.font = "16px normal";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(arr[i], 20, 680 - offset * i);
+    });
+    ctx.closePath();
+
+    ctx.beginPath();
+    for (var i = 0; i <= 5; i++) {
+        if (i == 0) {
+            ctx.moveTo(50 + offset * i, (random(30, 80) - 30) * offset);
+        }
+        ctx.lineTo(50 + offset * i, 680 - (random(30, 80) - 30) * 10);
+    }
+    ctx.stroke();
+    ctx.closePath();
+
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+</script>
+
+</html>

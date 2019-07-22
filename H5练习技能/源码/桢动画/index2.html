@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box {
+            width: 200px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            background: url(img/charector.png)no-repeat 0 0;
+        }
+        
+        .fasted {
+            animation: ruuning 200ms step-start infinite;
+        }
+        
+        .fast {
+            animation: ruuning 800ms step-start infinite;
+        }
+        
+        .maned {
+            animation: ruuning 1s step-start infinite;
+        }
+        
+        .man {
+            animation: ruuning 1.5s step-start infinite;
+        }
+        
+        .stop {
+            animation: ruuning 0s step-start infinite;
+        }
+        
+        .btn {
+            width: 200px;
+            height: 50px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        @keyframes ruuning {
+            0% {
+                background-position: 0 0;
+            }
+            14.3% {
+                background-position: -180px 0;
+            }
+            28.6% {
+                background-position: -360px 0;
+            }
+            42.9% {
+                background-position: -540px 0;
+            }
+            57.2% {
+                background-position: -720px 0;
+            }
+            71.5% {
+                background-position: -900px 0;
+            }
+            85.8% {
+                background-position: -1080px 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+
+    </div>
+    <div class="btn">
+        <a href="javascript:;" class="fasted">最快</a>
+        <a href="javascript:;" class="fast">快</a>
+        <a href="javascript:;" class="maned">慢</a>
+        <a href="javascript:;" class="man">最慢</a>
+        <a href="javascript:;" class="stop">暂停</a>
+    </div>
+</body>
+<script src="js/zepto.js"></script>
+<script>
+    $('a').on('click', function() {
+        var name = $(this).attr('class');
+        console.log(name)
+        $('#box').removeClass().addClass('box ' + name)
+    })
+</script>
+
+</html>

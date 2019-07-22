@@ -1,0 +1,187 @@
+@import url(conmon.css);
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+.wraper, section {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  height: .7rem;
+  background: #06c1ae;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .12rem;
+  color: #fff;
+}
+header p {
+  font-size: .16rem;
+}
+header p i {
+  float: right;
+  margin: .05rem 0 0 .05rem;
+}
+header div {
+  width: 60%;
+  background: #fff;
+  height: .3rem;
+  border-radius: .2rem;
+  display: -webkit-flex;
+  align-items: center;
+}
+header div input {
+  height: 80%;
+  width: 80%;
+  text-indent: .06rem;
+}
+header div i.icon {
+  margin-left: .1rem;
+  color: #21b79e;
+}
+header h3 {
+  display: -webkit-flex;
+  align-items: center;
+}
+header h3 i.icon {
+  font-size: .18rem;
+}
+header h3 i.icon-xiaoxi2 {
+  font-size: .22rem;
+  margin-left: .06rem;
+}
+
+.scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow: hidden;
+  overflow: auto;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+.man_list {
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  display: -webkit-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: .2rem;
+}
+.man_list dl {
+  width: 20%;
+  margin-top: .16rem;
+}
+.man_list dl dt {
+  width: .5rem;
+  margin: 0 auto;
+}
+.man_list dl dt img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.man_list dl dd {
+  text-align: center;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  background: #eee;
+  padding: .14rem 0;
+  position: relative;
+}
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.banner span {
+  position: absolute;
+  width: .2rem;
+  height: .2rem;
+  text-align: center;
+  line-height: .2rem;
+  border-radius: 50%;
+  color: #fff;
+  font-size: .18rem;
+  background: #666;
+  background: rgba(102, 102, 102, 0.52);
+  right: .1rem;
+  top: 50%;
+  margin-top: -.1rem;
+  cursor: pointer;
+}
+
+.list_tl {
+  width: 100%;
+  height: auto;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+.list_tl dl {
+  width: 50%;
+  display: -webkit-flex;
+  justify-content: space-around;
+  border-right: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+  padding: .1rem 0;
+}
+.list_tl dl dt {
+  width: .65rem;
+  order: 2;
+}
+.list_tl dl dt img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.list_tl dl dd {
+  order: 1;
+  align-self: center;
+}
+.list_tl dl dd h3 {
+  font-size: .16rem;
+}
+.list_tl dl dd p {
+  color: #3aad9c;
+  font-weight: 600;
+}
+.list_tl dl:nth-child(even) {
+  border-right: none;
+}
+
+footer {
+  height: .6rem;
+  width: 100%;
+  border-top: solid 1px #ccc;
+}
+footer p {
+  display: -webkit-flex;
+  align-items: center;
+  height: 100%;
+}
+footer p a {
+  flex-grow: 1;
+  text-align: center;
+  color: #999;
+}
+footer p a i.icon {
+  display: block;
+  font-size: .26rem;
+}
+footer p a:hover {
+  color: #2dbead;
+}
+
+/*# sourceMappingURL=style.css.map */

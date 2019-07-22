@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #mycanvas {
+            margin: 0 300px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <canvas id="mycanvas" width="400" height="600" style="border: 1px solid #ccc"></canvas>
+    <input type="file">
+</body>
+<script>
+    var mycanvas = document.querySelector('#mycanvas');
+    var ctx = mycanvas.getContext('2d');
+    var file = document.querySelector("input");
+    var imgwidth = mycanvas.width;
+    var imgheight = mycanvas.height;
+
+    var getGrey = function(r, g, b) {
+        return 0.299 * r + 0.578 * g + 0.144 * b;
+    }
+
+    file.onchange = function() {
+        var files = this.files;
+        var filerender = new FileReader();
+        filerender.readAsDataURL(files[0]);
+
+        filerender.onload = function() {
+            var url = this.result;
+            var img = new Image();
+            img.src = url;
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, imgwidth, imgheight);
+                var imgData = ctx.getImageData(0, 0, imgwidth, imgheight);
+                var imgarr = imgData.data;
+                console.log(imgarr)
+                for (var i = 0; i < imgarr.length; i += 4) {
+                    var r = imgarr[i];
+                    var g = imgarr[i + 1];
+                    var b = imgarr[i + 2];
+                    imgarr[i] = getGrey(r, g, b)
+                    imgarr[i + 1] = getGrey(r, g, b)
+                    imgarr[i + 2] = getGrey(r, g, b)
+                    imgarr[i + 3] = 255;
+                }
+                ctx.putImageData(imgData, 0, 0);
+            }
+        }
+    }
+</script>
+
+</html>

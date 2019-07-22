@@ -1,0 +1,147 @@
+@import "_minix.scss";
+@import "common.scss";
+.wrapper {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    @include direction(column);
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: pxTorem(44px);
+    background-image: linear-gradient(-135deg, rgb(21, 188, 230) 0%, rgb(45, 106, 185)100%);
+    padding: 0 pxTorem(15px);
+    box-sizing: border-box;
+    @include box_flex;
+    justify-content: space-between;
+    @include align(center);
+    div {
+        width: pxTorem(30px);
+        height: pxTorem(30px);
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+    h3 {
+        font-size: pxTorem(15px);
+        color: #fff;
+    }
+}
+
+footer {
+    width: 100%;
+    height: pxTorem(50px);
+    background: #fff;
+    border-top: 1px solid #ccc;
+    ul {
+        @include box_flex;
+        justify-content: center;
+        @include align(center);
+        li {
+            width: 33.3%;
+            @include box_flex;
+            @include direction(column);
+            @include align(center);
+            margin-top: pxTorem(10px);
+        }
+    }
+}
+
+.suo {
+    width: 100%;
+    padding: pxTorem(10px) pxTorem(15px);
+    @include sizing;
+    .top {
+        width: 100%;
+        height: pxTorem(30px);
+        background: #ccc;
+        border-radius: pxTorem(3px);
+        @include box_flex;
+        @include align(center);
+        justify-content: center;
+        position: relative;
+        input {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: rgba(138, 137, 137, 0.8);
+        }
+        img {
+            position: absolute;
+            left: pxTorem(140px);
+        }
+    }
+}
+
+section {
+    width: 100%;
+    @include flex;
+}
+
+.news {
+    width: 160%;
+    height: pxTorem(56px);
+    border-bottom: 1px solid #ccc;
+    @include box_flex;
+    padding: pxTorem(5px) pxTorem(15px);
+    @include sizing;
+    @include align(center);
+    transition: all 1s;
+    .head {
+        width: 15%;
+        height: pxTorem(50px);
+        flex: .8;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+    .main {
+        flex: 3.5;
+        width: 70%;
+        margin-left: pxTorem(15px);
+        h2 {
+            padding: pxTorem(5px) 0;
+        }
+    }
+    .time {
+        flex: 1;
+        width: 15%;
+    }
+    .del {
+        flex: 1;
+        height: 100%;
+        background: red;
+        line-height: pxTorem(52px);
+        text-align: center;
+        color: #fff;
+        font-size: pxTorem(13px);
+    }
+    .wei {
+        flex: 1;
+        height: 100%;
+        background: orange;
+        line-height: pxTorem(52px);
+        text-align: center;
+        color: #fff;
+        font-size: pxTorem(13px);
+    }
+    .din {
+        flex: 1;
+        height: 100%;
+        background: #ccc;
+        line-height: pxTorem(52px);
+        text-align: center;
+        color: #fff;
+        font-size: pxTorem(13px);
+    }
+}
+
+.active {
+    transform: translateX(-35%);
+}

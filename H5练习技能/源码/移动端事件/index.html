@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box {
+            height: 100px;
+            width: 100px;
+            background: red;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    var box = document.querySelector('.box');
+    box.addEventListener('touchstart', touchstart, false);
+    box.addEventListener('touchmove', touchmove, false);
+    box.addEventListener('touchend', touchend, false);
+
+    var startX, startY, endY, endX;
+
+    function touchstart(e) {
+        startX = e.touches[0].pageX - this.offsetLeft;
+        startY = e.touches[0].pageY - this.offsetTop;
+    }
+
+    function touchmove(e) {
+        endX = e.touches[0].pageX - startX;
+        endY = e.touches[0].pageY - startY;
+        if (endX <= 0) {
+            endX = 0;
+        }
+        if (endX >= window.innerWidth - this.offsetWidth) {
+            endX = window.innerWidth - this.offsetWidth;
+        }
+        if (endY <= 0) {
+            endY = 0;
+        }
+        if (endY >= window.innerHeight - this.offsetHeight) {
+            endY = window.innerHeight - this.offsetHeight;
+        }
+        box.style.left = endX + 'px';
+        box.style.top = endY + 'px';
+    }
+
+    function touchend(e) {
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box {
+            width: 90px;
+            height: 100px;
+            background: url(img/z-runing.png) no-repeat 0 0;
+            overflow: hidden;
+            animation: ruuning 200ms step-start infinite;
+        }
+        
+        @keyframes ruuning {
+            0% {
+                background-position: 0 0;
+            }
+            16.7% {
+                background-position: -90px 0;
+            }
+            33.4% {
+                background-position: -180px 0;
+            }
+            50.1% {
+                background-position: -270px 0;
+            }
+            66.8% {
+                background-position: -360px 0;
+            }
+            83.5% {
+                background-position: -450px 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+        
+        .box1 {
+            width: 48px;
+            height: 50px;
+            background: url(img/z-tutu.png) no-repeat 0 0;
+            overflow: hidden;
+            animation: runing 1s step-start infinite;
+        }
+        
+        @keyframes runing {
+            0% {
+                background-position: 0 0;
+            }
+            8.3% {
+                background-position: -48px 0;
+            }
+            16.6% {
+                background-position: -96px 0;
+            }
+            24.9% {
+                background-position: -144px 0;
+            }
+            33.2% {
+                background-position: -192px 0;
+            }
+            42% {
+                background-position: -240px 0;
+            }
+            51.3% {
+                background-position: -288px 0;
+            }
+            59.6% {
+                background-position: -336px 0;
+            }
+            67.9% {
+                background-position: -384px 0;
+            }
+            76.2% {
+                background-position: -432px 0;
+            }
+            84.5% {
+                background-position: -480px 0;
+            }
+            92.8% {
+                background-position: -528px 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+        
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background: url(img/sprites.png) no-repeat 0 0;
+            overflow: hidden;
+            animation: ruuning 1s steps(6) infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <div class="box1">
+
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+
+</html>

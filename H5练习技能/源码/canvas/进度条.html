@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <canvas class="canvas" width="400" height="400" style="border:1px solid #000"></canvas>
+    <script>
+        var can = document.querySelector('.canvas');
+        var ctx = can.getContext('2d');
+        var deg = Math.PI / 180;
+        var init = 0;
+        var end = 360;
+        ctx.lineWidth = 20;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = "middle";
+        ctx.font = "24px normal";
+
+        function drawarc() {
+            init++;
+            if (init < end) {
+                requestAnimationFrame(drawarc);
+            }
+            var text = Math.round(init / 360 * 100) + '%';
+            ctx.clearRect(0, 0, 400, 400);
+            ctx.beginPath();
+            ctx.arc(200, 200, 100, 0, deg * init);
+            ctx.fillText(text, 200, 200);
+            ctx.stroke();
+        }
+        drawarc();
+
+
+        // new DrawArc('.canvas', {
+        //     start: -90, //起始角度
+        //     radius: 100, //圆环的角度
+        //     bgcolor: "red", //圆环颜色
+        //     fontColor: "#000",
+        //     lineWidth: 20,
+        //     text: true //中间显示文字 false不显示文字
+        // })
+    </script>
+</body>
+
+</html>

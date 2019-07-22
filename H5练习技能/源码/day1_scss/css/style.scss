@@ -1,0 +1,158 @@
+@charset "UTF-8";
+$R:right;
+
+*{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+ul{
+   width:140px;
+   background:#ccc;
+   li{
+    padding:5px 5px;
+    border-bottom:solid 1px #eee;
+   }
+}
+
+ol{
+  @extend ul;
+}
+
+.test{
+  text-align:center;
+  line-height:50px;
+  color:red;
+  background:#000;
+}
+
+%test{
+  text-align:center;
+  line-height:50px;
+  color:red;
+  background:#000;
+}
+
+.man_box{
+   //@extend %test;
+  //@extend .test;
+}
+
+
+
+
+/*@mixin conmon{
+  width:300px;
+  height:auto;
+  padding:6px;
+  border:solid 1px orange;
+  background:#ccc;
+}*/
+
+$w:100px;
+@mixin djg($w:100px,$p:6px,$col:#ccc){
+  width:$w;
+  height:auto;
+  padding:$p;
+  background:$col;
+  border:solid 1px green;
+}
+
+.wraper h3{
+  width:$w;
+}
+
+.wraper{
+  position:absolute;
+  #{$R}:10px;
+  bottom:20px;
+  @include djg(500px,15px,yellow);
+  //@include conmon;
+}
+.wraper2{
+  @include djg(200px,10px,orange)
+  //@include conmon;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$wh:200px;
+$col:#0ff;
+$u:"../img/pics.png";
+.box{
+  width:$wh;
+  height:$wh;
+  background:$col;
+  padding-#{$R}:50px;
+  margin-#{$R}:50px;
+  float:$R;	
+  //background:url($u) no-repeat;
+  p{
+    width:120px;
+    height:50px;
+    border:{
+      width:1px;
+      color:red;
+      style:solid;
+    }
+    margin:{
+      left:10px;
+      top:20px;
+    }
+    a{
+      display:block;
+      color:#fff;
+      &:hover{
+        background:red;
+      }
+    }
+  }
+}
+
+
+
+
+
+/*.box{
+	width:100px;
+	height:100px;
+	background:#0ff;
+}*/
+
+//box2的样式
+
+/*$cor:red;
+$cor:blue;*/
+/*$cor:green;
+$cor:yellow !default;
+$top:10px;
+body{
+	background:$cor;
+}
+.box{
+  width:$top;
+  height:$top;
+  background:$cor;
+  color:$cor;
+  position:absolute;
+  right:$top;
+  bottom:$top;
+}*/
+
+

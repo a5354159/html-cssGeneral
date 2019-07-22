@@ -1,0 +1,32 @@
+*{
+	margin:0;
+	padding: 0;
+	font-size: 14px;
+	color: #333;
+	text-decoration: none;
+}
+
+.wrap{
+	height: 80px;
+	background: #ccc;
+	display:-webkit-flex;
+	flex-direction: column;
+	/* -webkit-justify-content:flex-end; */
+	/* align-items: stretch; */
+
+	/* -webkit-justify-content:flex-start flex-end center space-between space-around;
+	-webkit-align-items:flex-start flex-end center baseline stretch; */
+	
+}
+
+
+/* .box{
+	width: 200px;
+	height: 50px;
+	background: #000;
+	display: flex;
+	align-items: stretch;
+}
+.box p{
+	background: red;
+} */

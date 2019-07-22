@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/1.css">
+    <link rel="stylesheet" href="swiper/swiper-4.1.6.min.css">
+    <style>
+        @import url(iconfont/iconfont.css);
+    </style>
+</head>
+<script src="js/common/flexible.js"></script>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <form>
+                <div>
+                    <i class="iconfont icon-fangdajing"></i>
+                    <input type="text" value="手机壳">
+                </div>
+
+                <i class="iconfont icon-xiaoxi"></i>
+            </form>
+        </header>
+        <section>
+            <div class="left">
+                <ul>
+                    <li class="bg">个人护理</li>
+                    <li>营养保健</li>
+                    <li>日式美食</li>
+                    <li>家居生活</li>
+                    <li>皮具包包</li>
+                    <li>母婴儿童</li>
+                    <li>日式美食</li>
+                    <li>日式美食</li>
+                    <li>日式美食</li>
+                    <li>日式美食</li>
+                    <li>日式美食</li>
+                </ul>
+            </div>
+            <div class="right">
+                <div>
+                    <ol class="list">
+                        <li class="active">分类</li>
+                        <li>品牌馆</li>
+                    </ol>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/banner1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/banner2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rightmain">
+                        <ul>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                            <li><img src="img/1.jpg" alt=""><span>时尚套装</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+</body>
+<script src="swiper/swiper-4.1.6.min.js"></script>
+<script src="js/common/zepto.js"></script>
+<script src="swiper/better-scroll.js"></script>
+<script>
+    var myswiper = new Swiper('.swiper-container', {
+        on: {
+            slideChange: function() {
+                var ind = myswiper.activeIndex;
+                $('.list').find('li').eq(ind).addClass('active').siblings().removeClass('active');
+            }
+        }
+    })
+
+    $('.list').on('click', 'li', function() {
+        var index = $(this).index();
+        myswiper.slideTo(index, 1000)
+    })
+    var box = new BScroll(".right");
+    var BScroll = new BScroll(".left");
+</script>
+
+</html>

@@ -1,0 +1,193 @@
+@import "common.scss";
+@import "_minix.scss";
+.wrap {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    background: #1D1D28;
+    @include direction(column);
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: pxTorem(88px);
+}
+
+.tou {
+    width: 100%;
+    height: pxTorem(44px);
+    @include box_flex;
+    @include align(center);
+    span {
+        width: 10%;
+        color: #fff;
+        font-size: pxTorem(15px);
+        text-align: center;
+    }
+    h3 {
+        @include flex;
+        color: #fff;
+        text-align: center;
+        font-size: pxTorem(15px);
+    }
+}
+
+.nav {
+    width: 100%;
+    height: pxTorem(44px);
+    @include box_flex;
+    @include align(center);
+    background: #2CBB55;
+    justify-content: space-between;
+    .tit {
+        img {
+            width: pxTorem(40px);
+            height: pxTorem(21px);
+            padding: 0 pxTorem(10px);
+        }
+    }
+    form {
+        width: 60%;
+        @include box_flex;
+        height: pxTorem(30px);
+        background: #fff;
+        line-height: pxTorem(30px);
+        border-radius: pxTorem(15px) pxTorem(15px) pxTorem(15px) pxTorem(15px);
+        img {
+            margin: pxTorem(10px);
+        }
+    }
+    .lei {
+        @include box_flex;
+        color: #fff;
+        padding: 0 pxTorem(3px);
+        span {
+            padding: 0 pxTorem(5px);
+        }
+    }
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow: hidden;
+}
+
+.banner {
+    width: 100%;
+    @include box_flex;
+    @include align(center);
+    @include flex;
+    justify-content: space-between;
+    margin: pxTorem(15px) 0;
+    img {
+        padding: 0 pxTorem(15px);
+    }
+    span:nth-of-type(1) {
+        width: 10%;
+        height: pxTorem(119px);
+        background: #272734;
+        border-radius: 0 pxTorem(15px) pxTorem(15px) 0;
+    }
+    span:nth-of-type(2) {
+        width: 10%;
+        height: pxTorem(119px);
+        background: #272734;
+        border-radius: pxTorem(15px) 0 0 pxTorem(15px);
+    }
+}
+
+.list {
+    width: 100%;
+    @include flex;
+    ul {
+        @include box_flex;
+        flex-wrap: wrap;
+        li {
+            @include box_flex;
+            @include direction(column);
+            @include align(center);
+            width: 25%;
+            text-align: center;
+            a {
+                color: #fff;
+                margin: pxTorem(8px) 0;
+            }
+        }
+    }
+}
+
+.title {
+    width: 100%;
+    padding: pxTorem(15px);
+    .head {
+        @include box_flex;
+        @include align(center);
+        span {
+            width: pxTorem(3px);
+            height: pxTorem(15px);
+            background: #FBC700;
+            margin-right: pxTorem(10px);
+        }
+        h6 {
+            color: #fff;
+            font-size: pxTorem(15px);
+        }
+    }
+    ul {
+        width: 100%;
+        @include box_flex;
+        overflow-x: scroll;
+        li {
+            width: 50%;
+            height: pxTorem(90px);
+            line-height: pxTorem(90px);
+            color: #fff;
+            font-size: pxTorem(20px);
+            text-align: center;
+            margin: pxTorem(10px) pxTorem(12px);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        li:nth-of-type(1) {
+            background: url(../img/国际@2x.png) no-repeat 0 0;
+            background-size: 100% 100%;
+        }
+        li:nth-of-type(2) {
+            background: orange;
+        }
+        li:nth-of-type(3) {
+            background: orange;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    height: pxTorem(50px);
+    background: #fff;
+    ul {
+        @include box_flex;
+        li {
+            @include box_flex;
+            @include align(center);
+            @include justify(center);
+            width: 50%;
+            line-height: pxTorem(50px);
+            text-align: center;
+            img {
+                width: pxTorem(22px);
+                height: pxTorem(22px);
+            }
+            a {
+                font-size: pxTorem(15px);
+                padding: 0 pxTorem(10px);
+            }
+        }
+        li:nth-of-type(1) {
+            border-right: pxTorem(1px) solid #ccc;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="600px" height="600px" style="border: 1px solid #ccc"></canvas>
+</body>
+<script>
+    var mycanvas = document.querySelector('#mycanvas');
+    var ctx = mycanvas.getContext('2d');
+    var start = 0,
+        end = 0,
+        sum = 0,
+        arr = [],
+        deg = Math.PI / 180;
+
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    for (var i = 0; i < 8; i++) {
+        arr.push({
+            'color': `rgb(${random(0,255)},${random(0,255)},${random(0,255)})`,
+            'ang': random(80, 300)
+        })
+    }
+
+    var sum = arr.map(function(v, i) {
+        return v.ang
+    }).reduce(function(a, b) {
+        return a + b
+    })
+
+    arr.map(function(v, i) {
+        end = start + v.ang / sum * 360;
+        ctx.beginPath();
+        ctx.moveTo(300, 300);
+        ctx.arc(300, 300, 200, start * deg, end * deg);
+        ctx.fillStyle = v.color;
+        ctx.fill();
+
+        var r = start + v.ang / 2 / sum * 360;
+        var x = Math.cos(r * deg) * 200 + 300;
+        var y = Math.sin(r * deg) * 200 + 300;
+
+        var x1 = Math.cos(r * deg) * 220 + 300;
+        var y1 = Math.sin(r * deg) * 220 + 300;
+
+        if (x1 > 300) {
+            var x2 = x1 + 50;
+            var x3 = x1 + 50;
+        } else {
+            var x2 = x1 - 50;
+            var x3 = x1 - 80;
+        }
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x1, y1);
+        ctx.lineTo(x2, y1);
+        ctx.strokeStyle = v.color;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.fillText('1606a', x3, y1);
+
+        start = end;
+    })
+
+    ctx.beginPath();
+    ctx.arc(300, 300, 160, 0, 360);
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+
+    var newarr = [{
+        ang: 30,
+        color: "red"
+    }, {
+        ang: 70,
+        color: "green"
+    }, {
+        ang: 260,
+        color: "pink"
+    }]
+    var start1 = -90,
+        end1 = 0;
+    var maxarr = newarr.map(function(v, i) {
+        return v.ang;
+    })
+    var max = Math.max.apply(null, maxarr);
+    console.log(max)
+    newarr.map(function(v, i) {
+        end1 = start1 + v.ang;
+        ctx.beginPath();
+        if (max == v.ang) {
+            ctx.moveTo(300, 300)
+            ctx.arc(300, 300, 120, start1 * deg, end1 * deg);
+        } else {
+            ctx.moveTo(305, 295)
+            ctx.arc(305, 295, 120, start1 * deg, end1 * deg);
+        }
+        ctx.fillStyle = v.color;
+        ctx.fill();
+        start1 = end1;
+    })
+</script>
+
+</html>

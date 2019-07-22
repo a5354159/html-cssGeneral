@@ -1,0 +1,31 @@
+
+
+css3中真正的动画是animation，transform和transition都只是对元素属性的变形或者是状态的过渡
+
+
+因为css3还没有正式发布，各个浏览器对它的的支持也各不相同，在设置css3属性（包括@开头的新属性）的时候要对各个浏览器表示前缀。
+
+
+
+animation动画的属性
+    -webkit-animation：name  duration  tming  delay  interation-count direction
+　　　1  animation-name 用来定义一个动画的名称，transition-name相同
+　　　
+　　　2  animation-duration 用来指定元素播放动画所持续的时间，单位s秒，其默认值是“0”；transition-duration 相同
+　　　
+　　　3  animation-timing-function：动画的播放方法，transition-easing相同
+　　　
+　　　4  animation-delay：默认值是0，用来指定元素动画的开始时间，即多久之后开始执行动画，transitio-delay相同
+　　　
+　　　5  animation-interation-count：用来指定元素动画的循环次数，其可取值number为数字，其默认值为“1”，infinite为无限次数循环
+　　　
+　　　6  animation-direction：用来指定元素动画播放的方向，当设置为alternate，他的作用是：动画播放在第偶数次向前播放，第基数次向反方向播放
+
+@keyframes被称为关键帧，用于引出一个动画{
+	开始帧（form == 0%）
+	结束帧（to ==100%）
+}
+可以定义不同百分比的动画效果
+
+
+opacity用于引入淡入淡出的动画（0-1之间的小数）

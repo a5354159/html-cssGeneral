@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/1.css">
+</head>
+<script src="js/common/flexible.js"></script>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="top">
+                <img src="img/icon.png" alt="">
+            </div>
+            <div class="main">
+                <h1>10</h1>
+                <span>+</span>
+                <h3>12%</h3>
+
+            </div>
+            <div class="line">
+                <p></p>
+            </div>
+            <div class="time">
+                <span>投资期限:<span>12</span>个月</span>
+            </div>
+            <div class="bottom">
+                <div class="du">
+                    <p>10</p><span>%</span>
+                </div>
+                <div class="box">
+                    <p class="jin"><i></i></p>
+                </div>
+                <div class="bot">
+                    <div>
+                        <p>募集总额</p>
+                        <span>100000.00</span>
+                    </div>
+                    <div>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;剩余</p>
+                        <span>90000.00</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <div class="top">
+                <p>项目周期</p>
+            </div>
+            <div class="main">
+                <ul>
+                    <li><img src="img/icon2.png" alt=""></li>
+                    <li>开始投资</li>
+                    <li>2017/04/05</li>
+                </ul>
+                <div class="foot">
+                    <img src="img/foot.png" alt="">
+                </div>
+                <ul>
+                    <li><img src="img/icon2.png" alt=""></li>
+                    <li>开始投资</li>
+                    <li>2017/04/05</li>
+                </ul>
+                <div class="foot">
+                    <img src="img/foot.png" alt="">
+                </div>
+                <ul>
+                    <li><img src="img/icon2.png" alt=""></li>
+                    <li>开始投资</li>
+                    <li>2017/04/05</li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <div><span>资金用途：</span><span>自用资金</span></div>
+                <div><span>还款方式：</span><span>一次性还本付息</span></div>
+                <div><span>最小投资额：</span><span>1000.00</span></div>
+                <div><span>最大投资额：</span><span>50000.00元</span></div>
+                <div><span>投资结束倒计时：</span><span>已结束</span></div>
+            </div>
+        </section>
+        <footer>
+            <span>立即投资</span>
+        </footer>
+    </div>
+    <script src="js/common/zepto.js"></script>
+    <script>
+        var n = 0,
+            max = $('.box').width() * 1;
+        var du = $('.du>p').text() * 1;
+        var timer = setInterval(function() {
+            n++;
+            if (n > max) {
+                n = 0;
+            } else {
+                $('.jin').width(n + 'px');
+                $('.du').css('margin-left', n + "px");
+                du = parseInt(n * 0.1);
+                $('.du>p').text(du);
+            }
+        }, 10)
+    </script>
+</body>
+
+</html>

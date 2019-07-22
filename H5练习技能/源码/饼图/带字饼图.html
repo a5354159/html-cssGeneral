@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="700" height="600" style="border: 1px solid #ccc"></canvas>
+</body>
+<script>
+    var mycanvas = document.querySelector('#mycanvas');
+    var ctx = mycanvas.getContext('2d');
+    var start = 0,
+        end = 0,
+        sum = 0,
+        arr = [];
+    var deg = Math.PI / 180;
+    // data = [{
+    //     ang: 30,
+    //     color: "pink"
+    // }, {
+    //     ang: 60,
+    //     color: "red"
+    // }, {
+    //     ang: 120,
+    //     color: "blue"
+    // }, {
+    //     ang: 50,
+    //     color: "skyblue"
+    // }, {
+    //     ang: 100,
+    //     color: "orange"
+    // }]
+
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    var len = random(5, 9);
+    for (var i = 0; i < len; i++) {
+        arr.push({
+            "color": `rgb(${random(0,255)},${random(0,255)},${random(0,255)})`,
+            "ang": random(70, 300)
+        })
+    }
+    var sum = arr.map(function(v, i) {
+        return v.ang;
+    }).reduce(function(a, b) {
+        return a + b;
+    })
+    arr.map(function(v, k) {
+        end = start + v.ang / sum * 360;
+        ctx.beginPath();
+        ctx.moveTo(300, 300)
+        ctx.arc(300, 300, 200, start * deg, end * deg);
+        ctx.fillStyle = v.color;
+        ctx.fill();
+
+
+
+        var r = start + v.ang / 2 / sum * 360;
+        var x = Math.cos(r * deg) * 200 + 300;
+        var y = Math.sin(r * deg) * 200 + 300;
+        // ctx.fillStyle = "#000";
+        // ctx.fillText("1606a", x, y);
+
+        var x1 = Math.cos(r * deg) * 220 + 300;
+        var y1 = Math.sin(r * deg) * 220 + 300;
+
+        if (x1 > 300) {
+            var x2 = x1 + 100;
+            var x3 = x1 + 50;
+        } else {
+            var x2 = x1 - 100;
+            var x3 = x1 - 50;
+        }
+        y3 = y1 - 10;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x1, y1);
+        ctx.lineTo(x2, y1);
+        ctx.strokeStyle = v.color;
+        ctx.stroke();
+
+
+        ctx.beginPath();
+        ctx.arc(x2, y1, 5, 0, 360);
+        ctx.fillStyle = v.color;
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillText('雷神', x3, y3);
+
+
+
+        start = end;
+    });
+
+    ctx.beginPath();
+    ctx.arc(300, 300, 150, 0, 360);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(300, 300, 150, 0, 360);
+    ctx.lineWidth = 30;
+    ctx.strokeStyle = "rgba(0,0,0,.1)";
+    ctx.stroke();
+</script>
+
+</html>

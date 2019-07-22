@@ -1,0 +1,153 @@
+@import url(conmon.css);
+html,body,wraper,section{
+	width:100%;
+	height:100%;
+}
+
+header{
+    width:100%;
+	height:.45rem;
+	background:#22282a;
+	position:relative;
+	a,span{
+      position:absolute;
+	}
+	a{
+	  left:.1rem;
+	  top:.12rem;
+	  color:#fff;
+	  font-size:.14rem;
+	}
+	span{
+	  width:.21rem;
+	  height:.05rem;
+	  background:url(../img/images/header_r_03.jpg) no-repeat center center;
+	  background-size:100% 100%;
+	  right:.15rem;
+	  top:.2rem;
+	}
+	h3{
+	  text-align:center;
+	  line-height:.45rem;
+	  color:#fff;
+	  font-size:.16rem;
+	}
+}
+
+.scroll{
+	width:100%;
+	height:100%;
+}
+
+.sec_top{
+	height:auto;
+	margin:.1rem 0;
+	border-top:solid 1px #dcdcdc;
+	border-bottom:solid 1px #dcdcdc;
+	.top_inner{
+	   width:85%;
+	   margin:0 auto;
+	   p{
+	     margin-top:.1rem;
+	     b{
+	         float:left;
+	         width:.19rem;
+	         height:.25rem;
+	         background:url(../img/images/address_03.jpg) no-repeat;
+	         background-size:100% 100%;
+	       }
+	     span{
+	       float:left;
+	       margin:.03rem 0 0 .08rem;
+	       color:#666666;
+	     }
+	     button{
+	       float:right;
+	       height:.25rem;
+	       width:.5rem;
+	       border:none;
+	       background:#ff7200;
+	       text-align:center;
+	       line-height:.25rem;
+	       color:#fff;
+	       border-radius:.04rem;
+	     }
+	   }
+	}
+}
+
+.top_inner .top_inp{
+    margin-bottom:.1rem;
+	input{
+	  width:100%;
+	  border:solid 1px #ccc;
+	  margin-top:.1rem;
+	  height:.24rem;
+	  line-height:.24rem;
+	  text-indent:.1rem;
+	}
+}
+
+.sec_two{
+	width:100%;
+	height:auto;
+	.two_tit{
+	   width:100%;
+	   border-top:solid 1px #ccc;
+	   border-bottom:solid 1px #ccc;
+
+	   h3{
+	     padding:.16rem 0;
+	     margin-left:.19rem;
+	     color:#585858;
+	     font-size:.16rem;
+	     span{
+	        font-size:.16rem;
+	     }
+	   }
+	}
+}
+
+.two_man{
+	width:100%;
+	height:auto;
+	border-bottom:solid 1px #ccc;
+	dl{
+	  width:90%;
+	  margin:0 auto;
+	  padding:.07rem 0;
+	  dt{
+	    width: 1rem;
+	    height:1rem;
+	    float:left;
+	    img{
+	       width:100%;
+	       height:auto;
+	       display:block;
+	    }
+	  }
+	  dd{
+	    float:left;
+	    width:60%;
+	    margin-left:2%;
+	    h3{
+	      width:100%;
+	      font-size:.15rem;
+	      font-weight:bold;
+	      color:#585858;
+	      padding-bottom:.06rem;
+	      border-bottom:dashed 1px #ccc;
+	    }
+	    p{
+	     color:#888888;
+	     margin:.03rem 0;
+	    }
+	    em{
+	      color:#888888;
+	    }
+	    h4{
+	      color:#ff7200;
+	    }
+	  }
+	}
+}

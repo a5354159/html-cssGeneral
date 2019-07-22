@@ -1,0 +1,20 @@
+﻿
+  margin:外边距  盒子与盒子之间的间距  
+    1.参数说明
+      margin:上下左右;    一个值的情况下
+      margin:上下  左右;  两个值的情况下
+      margin:上 右 下 左; 四个值的情况下
+
+
+  padding:内填充 给盒子或元素本身填充padding值是包含在元素宽度或高度内的
+    1.参数说明
+      padding:上下左右;    一个值的情况下
+      padding:上下  左右;  两个值的情况下
+      padding:上 右 下 左; 四个值的情况下
+
+
+  border-radius:圆角
+
+  盒模型:由那几部分组成的
+  1.content(内容) padding(内填充) border(边框线) margin(外边距)
+  2.字体：Fonts

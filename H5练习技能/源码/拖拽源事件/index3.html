@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .box1 {
+            width: 100%;
+            height: 300px;
+            background: orange;
+        }
+        
+        .box1 ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .box1 ul li {
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 0, 0, .5);
+            margin: 50px 10px;
+        }
+        
+        .box2 {
+            width: 100%;
+            height: 300px;
+            background: orchid;
+            position: absolute;
+            bottom: -100%;
+            transition: all 1s;
+        }
+        
+        .box2 ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .box2 ul li {
+            width: 200px;
+            height: 200px;
+            background: rgba(0, 0, 0, .5);
+            margin: 50px 10px;
+        }
+        
+        .box2 ul li.active {
+            animation: bgcolor 1s linear forwards;
+        }
+        
+        @keyframes bgcolor {
+            0% {
+                background: red;
+            }
+            50% {
+                background: forestgreen;
+            }
+            100% {
+                background: aqua;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box1">
+            <ul>
+                <li draggable="true">1</li>
+                <li draggable="true">2</li>
+                <li draggable="true">3</li>
+                <li draggable="true">4</li>
+                <li draggable="true">5</li>
+            </ul>
+        </div>
+        <div class="box2">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script>
+    var box2 = document.querySelector('.box2');
+    var lis = document.querySelectorAll('.box1>ul li');
+    var lies = document.querySelectorAll('.box2>ul li');
+    var draggable;
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].ondragstart = function(e) {
+            draggable = this;
+            box2.style.bottom = "0";
+        }
+    }
+
+    for (var j = 0; j < lies.length; j++) {
+        lies[j].ondragenter = function() {
+            this.style.transform = "scale(1.2)";
+        }
+        lies[j].ondragover = function(e) {
+            e.preventDefault();
+
+        }
+        lies[j].ondrop = function(e) {
+            this.classList.add("active");
+            this.style.transform = "";
+        }
+    }
+</script>
+
+</html>s

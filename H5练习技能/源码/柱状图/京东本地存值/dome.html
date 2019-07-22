@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        
+        .box1 {
+            width: 200px;
+            height: 200px;
+            border: thin solid #0ff;
+            float: left;
+            margin-right: 200px;
+        }
+        
+        .box2 {
+            width: 200px;
+            height: 200px;
+            border: thin solid #00f;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <img src="../郑豪作业/jq/作品/拖拽购物车/img/shirt4.gif" alt="" draggable="true">
+    </div>
+    <div class="box2"></div>
+</body>
+<script>
+    var box1 = document.querySelector('.box1');
+    var box2 = document.querySelector('.box2');
+    var img = document.querySelector('img');
+    var draggable;
+    box1.ondragover = function(e) {
+        e.preventDefault();
+    }
+    img.ondragstart = function(e) {
+        draggable = e.target;
+    }
+    box1.ondrop = function() {
+        this.appendChild(draggable)
+    }
+    box2.ondragover = function(e) {
+        e.preventDefault();
+    }
+    box2.ondrop = function() {
+        this.appendChild(draggable)
+    }
+</script>
+
+</html>

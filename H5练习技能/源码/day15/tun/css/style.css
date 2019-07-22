@@ -1,0 +1,206 @@
+@import url(conmon.css);
+section {
+  background: #eeeeee;
+}
+
+.scroll {
+  width: 100%;
+  height: auto;
+}
+.scroll .scroll_inner {
+  width: 96%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.sec_conmon {
+  width: 100%;
+  background: #ff703b;
+  height: auto;
+  display: -webkit-flex;
+  margin-top: .04rem;
+}
+
+.top_one {
+  width: 25%;
+  -webkit-flex-shrink: 1;
+}
+.top_one h3 {
+  color: #fff;
+  margin: .12rem 0 0 .12rem;
+}
+.top_one img {
+  margin: 6px 8px 0 0;
+  float: right;
+}
+
+.top_two {
+  width: 75%;
+  border-left: solid 1px #fff;
+  -webkit-flex-shrink: 1;
+}
+.top_two ul {
+  display: -webkit-flex;
+  height: 100%;
+  -webkit-flex-wrap: wrap;
+}
+.top_two ul li {
+  width: 50%;
+  height: 50%;
+  color: #fff;
+  text-align: center;
+  border-right: solid 1px #fff;
+  border-bottom: 1px solid #fff;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  -webkit-flex-shrink: 1;
+}
+.top_two ul li a {
+  color: #fff;
+}
+
+.sec_zh {
+  background: #2abc66;
+}
+.sec_zh img {
+  margin-right: 12px;
+}
+.sec_zh .top_one p {
+  font-size: 12px;
+}
+
+.sec_date {
+  width: 100%;
+  height: auto;
+}
+
+.date_left {
+  width: 49%;
+  float: left;
+}
+
+.date_right {
+  width: 49%;
+  float: right;
+}
+
+.date_left, .date_right {
+  position: relative;
+}
+
+.date_left img, .date_right img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.left_inner h3 {
+  width: 40%;
+  padding: 6px 0;
+  background: #ff6334;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bot_price {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.55);
+  position: absolute;
+  bottom: 0;
+}
+.bot_price p {
+  color: #fff;
+}
+
+.count_price {
+  margin-top: 8px;
+}
+.count_price span {
+  float: left;
+  color: #e45a30;
+}
+.count_price span b {
+  font-size: 18px;
+}
+.count_price span i {
+  color: #999;
+}
+.count_price em {
+  float: right;
+  color: #999;
+  margin-top: 4px;
+}
+
+.right_tit {
+  position: relative;
+}
+
+.right_tit div {
+  height: 96%;
+  width: 50%;
+  background: #000;
+  background: rgba(0, 0, 0, 0.55);
+  position: absolute;
+  top: 0;
+}
+.right_tit div p {
+  color: #fff;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right_tit div p:first-child {
+  height: 35%;
+  text-align: center;
+  background: #ff9525;
+}
+
+.right_tit div p:last-child {
+  height: 65%;
+  text-align: center;
+}
+
+.sec_ly {
+  width: 100%;
+}
+.sec_ly dl {
+  width: 100%;
+  height: 1rem;
+  padding: .1rem 0;
+  display: -webkit-flex;
+  border-bottom: solid 1px #ccc;
+}
+.sec_ly dl dt {
+  width: 30%;
+  height: auto;
+}
+.sec_ly dl dt img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.sec_ly dl dd {
+  width: 68%;
+  height: auto;
+  margin-right: 2%;
+}
+.sec_ly dl dd p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.sec_ly dl dd div {
+  margin-top: 6px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .list {
+            width: 120%
+        }
+        
+        .list li {
+            width: 120%;
+            height: 44px;
+            text-align: center;
+            line-height: 44px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            position: relative;
+            transition: all 1s;
+        }
+        
+        .list li span {
+            flex: 3;
+            text-align: center;
+        }
+        
+        .list li div {
+            flex: 1;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="list">
+            <li data-index="0"><span>1</span>
+                <div>删除</div>
+            </li>
+            <li data-index="1"><span>2</span>
+                <div>删除</div>
+            </li>
+            <li data-index="2"><span>3</span>
+                <div>删除</div>
+            </li>
+            <li data-index="3"><span>4</span>
+                <div>删除</div>
+            </li>
+            <li data-index="4"><span>5</span>
+                <div>删除</div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var list = document.querySelector('.list');
+    var li = document.querySelectorAll('.list li');
+    var startX, endX;
+    for (var i = 0; i < li.length; i++) {
+        touch(li[i]);
+    }
+
+    function touch(list) {
+        list.addEventListener('touchstart', touchstart, false);
+        list.addEventListener('touchmove', touchmove, false);
+        list.addEventListener('touchend', touchend, false);
+    }
+
+
+
+    function touchstart(e) {
+        startX = e.touches[0].pageX;
+    }
+
+    function touchmove(e) {
+        endX = e.touches[0].pageX - startX;
+        if (endX <= 0) {
+            endX = 0;
+        }
+        if (endX >= window.innerWidth - this.offsetWidth) {
+            endX = window.innerWidth - this.offsetWidth;
+        }
+        this.style.left = endX + "px";
+    }
+
+    function touchend(e) {
+
+    }
+</script>
+
+</html>

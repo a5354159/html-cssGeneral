@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .wrapper {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            position: relative;
+        }
+        
+        .box {
+            width: 400px;
+            height: 400px;
+            background: url(./img/1.png) no-repeat 0 0;
+            background-size: 100% 100%;
+            overflow: hidden;
+            animation: runinng 1s ease-in-out infinite alternate paused;
+        }
+        
+        .content {
+            height: 160px;
+            width: 160px;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 100%;
+            line-height: 182px;
+            text-align: center;
+        }
+        
+        .content:after {
+            content: "";
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            left: 0;
+            top: -15px;
+            margin-left: 40px;
+            transform: rotate(45deg);
+            background: #fff;
+        }
+        
+        @keyframes runinng {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box"></div>
+        <div class="content">
+            开始抽奖
+        </div>
+    </div>
+</body>
+<script src="js/zepto.js"></script>
+<script>
+    $('.content').click(function() {
+        if ($(this).text() == "开始抽奖") {
+            $(this).text("停止抽奖");
+            $('.box').css({
+                "animation-play-state": "running"
+            })
+        } else {
+            $(this).text("开始抽奖");
+            $('.box').css({
+                "animation-play-state": "paused"
+            })
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,23 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.column{
+	/*-webkit-column-count:10;*/
+	-webkit-column-width:200px;
+	-webkit-column-rule:thick dotted #ccc;
+	-webkit-column-gap:50px;
+}
+
+.column_span{
+	-webkit-column-count:3;
+	-webkit-column-rule:thick dotted #ccc;
+	text-align:center;
+	p,h3,span{
+      background:red;
+	}
+	p{
+	  -webkit-column-span:all;
+	}
+}

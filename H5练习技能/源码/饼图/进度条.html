@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="600" height="600" style="border: 1px solid #ccc"></canvas>
+</body>
+<script>
+    var mycanvas = document.querySelector('#mycanvas');
+    var ctx = mycanvas.getContext('2d');
+    var init = 0;
+    var deg = Math.PI / 180;
+    draw();
+
+    function draw() {
+        init++;
+        if (init < 360) {
+            requestAnimationFrame(draw);
+        }
+
+
+        var text = Math.floor(init / 360 * 100);
+        ctx.clearRect(0, 0, 600, 600);
+        ctx.beginPath();
+        ctx.arc(300, 300, 200, 0, init * deg);
+        ctx.lineWidth = 20;
+        ctx.stroke();
+
+        ctx.textAlign = 'center';
+        ctx.textBaseline = "middle";
+        ctx.font = '36px normal';
+        ctx.lineWidth = 1;
+        ctx.strokeText(text + "%", 300, 300)
+    }
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+              Css3动画
+-webkit  chrome内核
+-moz    firefoxn内核
+-o       opera内核
+-ms      IE内核  
+
+Transition：name(property)   duration  easing  delay
+功能：tansition是用来过渡动画的
+
+参数说明：
+-webkit-tranition：width  1.5s  ease-in  2s；
+Name：是要给添加动画的属性，name省略不写或设置为all时 ，表示要过渡所有发生了改变的属性，当要过渡属性时，
+属性与属性之间用逗号隔开
+
+Duration：定义过渡效果花费的时间，单位为s或ms
+
+Easing：动画曲线
+Linear：匀速（默认）
+ease-in：由慢到快
+ease-out：由快到慢
+ease-in-out：慢快慢
+
+Delay：延时，动画在多久之后执行
+
+说明：transition永远不要出现在hover里面；
+transition需要一个事件才能触发
+
+
+
+
+Transform：translate | scale | skew | rotate
+功能：transform主要是用来对元素进行2d或3d变换的
+
+Translate：是用来做位移的
+Scale：是用于缩放的
+Skew：是用于倾斜的
+Rotate：是用于旋转的
+
+直接使用以上属性是2d变换，在单词后面加上3d是做3d变换；
+
+列：上面属性也可以这样设置，translateX只设置X轴上的偏移，translateY只设置Y轴上的偏移，translateZ只设置Z轴上的偏移；
+说明；translate（X,Y）是2d转换，translate3d（X,Y,Z）是3d转换
+
+;一般都设为3d，3d会变换开启手机上的硬件加速，cpu运行更快；
+
+rotateX
+rotateY
+Rotate3d旋转的时候，要加上单位deg度数，（1,1,1,45deg）X,Y,Z都旋转45deg，1是要旋转的意思，0是不旋转；
+
+
+Transform-orgin：X,Y;
+功能：用来定义rotate旋转，skew倾斜和scale缩放的中心点；
+说明：X,Y可以是具体的数值，也可以是百分比还可以是，left，center，top，bottom
+
+

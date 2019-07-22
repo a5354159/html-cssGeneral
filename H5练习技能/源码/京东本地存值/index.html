@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/1.css">
+    <style>
+        @import url(iconfont/iconfont.css);
+    </style>
+</head>
+<script src="js/flexible.js"></script>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="left">
+                <i class="iconfont icon-xiangzuo"></i>
+            </div>
+            <div class="center">
+                <i class="iconfont icon-fangdajing"></i>
+                <input type="text" id='name'>
+            </div>
+            <div class="right">
+                <span id="search">搜索</span>
+            </div>
+        </header>
+        <section>
+            <div class="content">
+                <span>最近搜索</span>
+                <i class="iconfont icon-shanchu" id="delet"></i>
+            </div>
+            <ul class="list">
+                <!-- <li>鞋子</li>
+                <li>裤子</li>
+                <li>上衣</li> -->
+            </ul>
+        </section>
+        <div class="mask" style="display: none">
+            <div class="del">
+                <span class="dec">确定要清空吗？</span>
+                <div>
+                    <span class="no">取消</span>
+                    <span class="yes">确定</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/zepto.js"></script>
+<script src="js/index.js"></script>
+
+</html>

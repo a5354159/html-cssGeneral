@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        body,
+        html,
+        .wrap {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .wrap {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .content {
+            width: 100%;
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="conctor">
+            <input type="color" class="color">
+            <input type="range" class="range" value="1" min="1" max="10">
+            <input type="checkbox" class="checkbox">橡皮擦
+            <button class="save">save</button>
+            <button class="clear">clear</button>
+        </div>
+        <div class="content">
+            <canvas class="box" style="background:#eee;"></canvas>
+        </div>
+    </div>
+    <script>
+        var draw = (function() {
+            var addEvnet = function(can, parent, ops) {
+                    var offsetT = parent.offsetTop,
+                        offsetL = parent.offsetLeft;
+                    var colorDom = document.querySelector(ops.color),
+                        rangeDom = document.querySelector(ops.range),
+                        saveDom = document.querySelector(ops.save),
+                        clearDom = document.querySelector(ops.clear),
+                        checkboxDom = document.querySelector(ops.checkbox);
+                    var colorval = '#000';
+                    var rangeval = 1;
+                    var ctx = can.getContext('2d');
+                    colorDom.addEventListener('change', function() {
+                        colorval = this.value;
+                    }, false);
+                    rangeDom.addEventListener('change', function() {
+                        rangeval = this.value;
+                        // console.log(rangeval);
+                    }, false);
+                    clearDom.addEventListener('click', function() {
+                        ctx.clearRect(0, 0, can.width, can.height);
+                    }, false);
+                    saveDom.addEventListener('click', function() {
+                        checkboxDom.checked = false;
+                        ctx.globalCompositeOperation = "source-over";
+                        ctx.textAlign = "right";
+                        ctx.fillStyle = "#000";
+                        ctx.fillText('1605B版权所有', can.width - 20, can.height - 40);
+                        ctx.fillText(new Date().toLocaleString(), can.width - 20, can.height - 10);
+                        var src = can.toDataURL();
+                        var img = new Image();
+                        img.src = src;
+                        document.body.appendChild(img);
+                    }, false);
+                    can.addEventListener('touchstart', function(e) {
+                        //按下设置起点
+                        var touch = e.touches[0];
+                        var x = touch.clientX - offsetL;
+                        var y = touch.clientY - offsetT;
+                        ctx.strokeStyle = colorval;
+                        ctx.lineWidth = rangeval;
+                        //擦除还是绘制
+                        ctx.beginPath();
+                        if (checkboxDom.checked) {
+                            //橡皮擦选中
+                            ctx.globalCompositeOperation = "destination-out";
+                        } else {
+                            //正常画线
+                            ctx.globalCompositeOperation = "source-over";
+                        }
+                        ctx.moveTo(x, y);
+                    }, false);
+                    can.addEventListener('touchmove', function(e) {
+                        //移动一直lineTo
+                        var touch = e.touches[0];
+                        var x = touch.clientX - offsetL;
+                        var y = touch.clientY - offsetT;
+                        ctx.lineTo(x, y);
+                        ctx.stroke();
+                    }, false);
+                },
+                setWidth = function(ops) {
+                    var can = document.querySelector(ops.canvas);
+                    var parent = can.parentNode;
+                    var w = parent.offsetWidth,
+                        h = parent.offsetHeight;
+                    can.width = w;
+                    can.height = h;
+                    addEvnet(can, parent, ops);
+                },
+                init = function(ops) {
+                    setWidth(ops);
+                };
+
+            return {
+                init: init
+            }
+        })();
+
+        draw.init({
+            canvas: '.box',
+            color: '.color',
+            range: '.range',
+            save: '.save',
+            clear: '.clear',
+            checkbox: '.checkbox'
+        });
+    </script>
+</body>
+
+</html>

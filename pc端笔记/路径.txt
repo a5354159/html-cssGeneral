@@ -1,0 +1,20 @@
+路径：描述文件所在的位置
+
+路径的分类：1、绝对路径：C:/Users/Administrator/Desktop/10.31/html/jiadian.html  从盘符开始详细描述
+
+	    2、相对路径：html/news.html   相对上级目录或上上级目录或同级目录简略的描述
+			../html/news.html  上级目录
+			../../html/news.html  上上级目录
+	    3、algin：水平对齐方式  属性值有left、center、right
+
+下划线：<u></u>行内元素
+
+&gt; >
+
+&lt;<
+
+html中的注释：<!--被注释的内容-->
+
+css中的注释：/*被注释的内容*/
+
+注释的作用：1、解释说明 2、删除，不被浏览器编译

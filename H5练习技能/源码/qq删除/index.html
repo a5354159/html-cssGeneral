@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/1.css">
+</head>
+<script src="js/common/flexible.js"></script>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div>
+                <img src="img/1.jpg" alt="">
+            </div>
+            <h3>消息</h3>
+            <img src="img/qiu.jpg" alt="">
+        </header>
+        <div class="suo">
+            <div class="top">
+                <form action=""><img src="img/搜索icon@2x.png" alt=""><input type="text" value="搜索"></form>
+            </div>
+        </div>
+
+        <section>
+            <div class="news">
+                <div class="head">
+                    <img src="img/2.jpg" alt="">
+                </div>
+                <div class="main">
+                    <h2>我的电脑</h2>
+                    <p>你已在电脑登录，可传到电脑。</p>
+                </div>
+                <div class="time">
+                    <span>16:25</span>
+                </div>
+                <div class="din">
+                    <p>置顶</p>
+                </div>
+                <div class="del">
+                    <p>删除</p>
+                </div>
+                <div class="wei">
+                    <p>未读</p>
+                </div>
+
+            </div>
+            <div class="news">
+                <div class="head">
+                    <img src="img/2.jpg" alt="">
+                </div>
+                <div class="main">
+                    <h2>我的电脑</h2>
+                    <p>你已在电脑登录，可传到电脑。</p>
+                </div>
+                <div class="time">
+                    <span>16:25</span>
+                </div>
+                <div class="din">
+                    <p>置顶</p>
+                </div>
+                <div class="del">
+                    <p>删除</p>
+                </div>
+                <div class="wei">
+                    <p>未读</p>
+                </div>
+
+            </div>
+            <div class="news">
+                <div class="head">
+                    <img src="img/2.jpg" alt="">
+                </div>
+                <div class="main">
+                    <h2>我的电脑</h2>
+                    <p>你已在电脑登录，可传到电脑。</p>
+                </div>
+                <div class="time">
+                    <span>16:25</span>
+                </div>
+                <div class="din">
+                    <p>置顶</p>
+                </div>
+                <div class="del">
+                    <p>删除</p>
+                </div>
+                <div class="wei">
+                    <p>未读</p>
+                </div>
+
+            </div>
+            <div class="news">
+                <div class="head">
+                    <img src="img/2.jpg" alt="">
+                </div>
+                <div class="main">
+                    <h2>我的电脑</h2>
+                    <p>你已在电脑登录，可传到电脑。</p>
+                </div>
+                <div class="time">
+                    <span>16:25</span>
+                </div>
+                <div class="din">
+                    <p>置顶</p>
+                </div>
+                <div class="del">
+                    <p>删除</p>
+                </div>
+                <div class="wei">
+                    <p>未读</p>
+                </div>
+
+            </div>
+            <div class="news">
+                <div class="head">
+                    <img src="img/2.jpg" alt="">
+                </div>
+                <div class="main">
+                    <h2>我的电脑</h2>
+                    <p>你已在电脑登录，可传到电脑。</p>
+                </div>
+                <div class="time">
+                    <span>16:25</span>
+                </div>
+                <div class="din">
+                    <p>置顶</p>
+                </div>
+                <div class="del">
+                    <p>删除</p>
+                </div>
+                <div class="wei">
+                    <p>未读</p>
+                </div>
+
+            </div>
+            <div class="news">
+                <div class="head">
+                    <img src="img/2.jpg" alt="">
+                </div>
+                <div class="main">
+                    <h2>我的电脑</h2>
+                    <p>你已在电脑登录，可传到电脑。</p>
+                </div>
+                <div class="time">
+                    <span>16:25</span>
+                </div>
+                <div class="din">
+                    <p>置顶</p>
+                </div>
+                <div class="del">
+                    <p>删除</p>
+                </div>
+                <div class="wei">
+                    <p>未读</p>
+                </div>
+
+            </div>
+
+        </section>
+        <footer>
+            <ul>
+                <li><img src="img/ren.jpg" alt=""><a href="">消息</a></li>
+                <li><img src="img/ren.jpg" alt=""><a href="">联系人</a></li>
+                <li><img src="img/ren.jpg" alt=""><a href="">动态</a></li>
+            </ul>
+        </footer>
+    </div>
+</body>
+<script src="js/common/zepto.js"></script>
+<script>
+    $('.news').on('swipeLeft', function() {
+        $(this).addClass('active').siblings().removeClass('active');
+    })
+    $('.news').on('swipeRight', function() {
+        $(this).removeClass('active');
+    })
+    $('.del').on('click', function() {
+        $(this).parent().remove();
+    })
+</script>
+
+</html>

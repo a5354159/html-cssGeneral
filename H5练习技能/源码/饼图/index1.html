@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="600" height="600" style="border: 1px solid #ccc"></canvas>
+</body>
+<script>
+    var mycanvas = document.querySelector("#mycanvas");
+    var ctx = mycanvas.getContext("2d");
+    var deg = Math.PI / 180;
+    var start = 0,
+        end = 0,
+        sum = 0,
+        arr = [];
+
+
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    var len = random(5, 9);
+    var arr = [];
+    for (var i = 0; i < len; i++) {
+        arr.push({
+            'color': `rgb(${random(0,255)},${random(0,255)},${random(0,255)})`,
+            'ang': random(70, 330)
+        })
+    }
+    console.log(arr);
+    var sum = arr.map(function(v, i) {
+        return v.ang;
+    }).reduce(function(a, b) {
+        return a + b;
+    });
+    arr.map(function(v, i) {
+        end = start + v.ang / sum * 360;
+        ctx.beginPath();
+        ctx.arc(300, 300, 200, start * deg, end * deg);
+        ctx.lineTo(300, 300);
+        ctx.fillStyle = v.color;
+        ctx.fill();
+        start = end;
+    })
+
+    ctx.beginPath();
+    ctx.arc(300, 300, 150, 0, 360);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+</script>
+
+</html>

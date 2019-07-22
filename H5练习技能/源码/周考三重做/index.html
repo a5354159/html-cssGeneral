@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/swiper-4.3.3.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src='js/flexible.js'></script>
+    <style>
+        .swiper-pagination-bullet-active {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='wrap swiper-container'>
+        <ul class='swiper-wrapper'>
+            <li class='swiper-slide'>
+                <div class='upDown ani infinite' swiper-animate-effect='slideInUp'></div>
+                <div class='bonus1 ani' swiper-animate-effect='bounceInDown'></div>
+                <div class='bonus2 ani' swiper-animate-effect='zoomIn' swiper-animate-delay='1s'></div>
+                <div class='bonus3 ani' swiper-animate-effect='rotateInDownLeft' swiper-animate-delay='2s'>
+                </div>
+                <div class='tiger ani' swiper-animate-effect='bounceInDown' swiper-animate-delay='3s'></div>
+                <div class='bonus4 ani' swiper-animate-effect='bounceInUp' swiper-animate-delay='4s'></div>
+            </li>
+            <li class='swiper-slide'>
+                <div class='upDown ani infinite' swiper-animate-effect='slideInUp'></div>
+                <div class='one ani' swiper-animate-effect='bounceInDown'></div>
+                <div class='two ani' swiper-animate-effect='zoomIn' swiper-animate-delay='1s'></div>
+                <div class='three ani' swiper-animate-effect='zoomIn' swiper-animate-delay='2s'></div>
+            </li>
+            <li class='swiper-slide'>
+                <div class='upDown ani infinite' swiper-animate-effect='slideInUp'></div>
+                <div class='four ani' swiper-animate-effect='bounceInDown'></div>
+                <div class='five ani' swiper-animate-effect='zoomIn' swiper-animate-delay='1s'></div>
+                <div class='six'>
+                    <div class='left ani' swiper-animate-effect='bounceInRight' swiper-animate-delay='2s'></div>
+                    <div class='right ani' swiper-animate-effect='bounceInLeft' swiper-animate-delay='3s'></div>
+                </div>
+            </li>
+            <li class='swiper-slide'>
+                <div class='upDown ani infinite' swiper-animate-effect='slideInUp'></div>
+                <div class='seven ani' swiper-animate-effect='fadeInDown'></div>
+                <div class='eight ani' swiper-animate-effect='bounceInLeft' swiper-animate-delay='1s'></div>
+            </li>
+        </ul>
+        <ol class='page swiper-pagination'></ol>
+    </div>
+</body>
+<script src='js/swiper-4.3.3.min.js'></script>
+<script src='js/swiper.animate1.0.3.min.js'></script>
+<script>
+    new Swiper('.wrap', {
+        direction: 'vertical',
+        pagination: {
+            el: '.page'
+        },
+
+        on: {
+            init: function() {
+                swiperAnimateCache(this);
+                swiperAnimate(this);
+            },
+            slideChangeTransitionStart: function() {
+                swiperAnimateCache(this);
+                swiperAnimate(this);
+            }
+        }
+    })
+</script>
+
+</html>

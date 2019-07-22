@@ -1,0 +1,48 @@
+
+
+display visibility overflow 三属性：
+
+	display:none;整体隐藏  不占位
+	display: block;显示
+
+可见
+	visibility: hidden;整体隐藏，占位
+	visibility:visible;显示；默认值
+	visibility:collapse;合并空间 隐藏
+
+溢出
+	overflow: hidden;溢出隐藏，将容器之外多余的部分隐藏
+	overflow: visible;溢出显示 默认值
+	overflow: auto;根据内容多少判断是否出现滚动条
+	overflow: scroll;强制显示滚动条
+	
+	overflow-x:hidden;隐藏x轴滚动条
+	overflow-y:scroll;强制给y】轴添加滚动条
+	
+	opacity:0-1 整体  ff
+	filter:alpha(opacity=0-100) ie 滤镜
+	
+	text-indent:-99999px;内容
+
+	position：left/top/bottom/right:-99999px;整体
+
+
+----单行文本的省略号显示：width+overflow+nowrap+text-overflow
+----tab标签切换效果
+----焦点图、轮播图
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

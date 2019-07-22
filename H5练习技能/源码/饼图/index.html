@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="600" height="600" style="border: 1px solid #ccc"></canvas>
+</body>
+<script>
+    var mycanvas = document.querySelector('#mycanvas');
+    var ctx = mycanvas.getContext('2d');
+    var deg = Math.PI / 180;
+    var start = 0,
+        end = 0;
+    data = [{
+        ang: 30,
+        color: "pink"
+    }, {
+        ang: 60,
+        color: "red"
+    }, {
+        ang: 120,
+        color: "blue"
+    }, {
+        ang: 50,
+        color: "skyblue"
+    }, {
+        ang: 100,
+        color: "orange"
+    }]
+
+
+
+    data.map(function(v, i) {
+        end = start + v.ang;
+        ctx.beginPath();
+        ctx.moveTo(300, 300);
+        ctx.arc(300, 300, 200, start * deg, end * deg);
+        ctx.fillStyle = v.color;
+        ctx.fill();
+        start = end;
+    });
+
+    ctx.beginPath();
+    ctx.moveTo(300, 300);
+    ctx.arc(300, 300, 150, 0, 360);
+    ctx.fillStyle = "#fff";
+    ctx.fill();
+    ctx.closePath();
+</script>
+
+</html>

@@ -1,0 +1,126 @@
+@import "common.scss";
+.wrap {
+    width: 100%;
+    height: 100%;
+    background: url(../img/bg.jpg) no-repeat;
+    background-size: cover;
+    ul {
+        width: 100%;
+        height: 100%;
+        li {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            >.upDown {
+                width: px2rem(40px);
+                height: px2rem(40px);
+                position: absolute;
+                left: 50%;
+                margin-left: px2rem(-32px);
+                bottom: px2rem(20px);
+                background: url(../img/arrow.png) no-repeat;
+                background-size: 100% 100%;
+            }
+            &:nth-child(1) {
+                >.bonus1 {
+                    width: 100%;
+                    height: px2rem(150px);
+                    background: url(../img/bonus_01.png) no-repeat;
+                    background-size: 100% 100%;
+                }
+                >.bonus2 {
+                    width: 100%;
+                    height: px2rem(100px);
+                    background: url(../img/bonus_02.jpg) no-repeat;
+                    background-size: 100% 100%;
+                }
+                >.bonus3 {
+                    width: 100%;
+                    height: px2rem(300px);
+                    background: url(../img/001.png) no-repeat;
+                    background-size: 100% 100%;
+                }
+                >.bonus4 {
+                    width: 100%;
+                    height: px2rem(300px);
+                    background: url(../img/003.png) no-repeat;
+                    background-size: 100% 100%;
+                }
+                >.tiger {
+                    width: 100%;
+                    height: px2rem(375px);
+                    background: url(../img/002.png) no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    left: 0;
+                    bottom: 40%;
+                }
+            }
+            &:nth-child(2) {
+                >.one {
+                    width: 100%;
+                    height: px2rem(120px);
+                    background: url(../img/004.png) no-repeat;
+                    background-size: 100% 100%;
+                }
+                >.two {
+                    width: 100%;
+                    height: px2rem(100px);
+                    background: url(../img/005.png) no-repeat;
+                    background-size: 100% 100%;
+                }
+                >.three {
+                    width: 100%;
+                    height: px2rem(500px);
+                    background: url(../img/006.png) no-repeat;
+                    background-size: 100% 100%;
+                }
+            }
+            &:nth-child(3) {
+                >.four {
+                    width: 100%;
+                    height: px2rem(120px);
+                    background: url(../img/007.png) no-repeat;
+                    background-size: 100% 100%;
+                }
+                >.five {
+                    width: 100%;
+                    height: px2rem(160px);
+                    background: url(../img/009.png) no-repeat;
+                    background-size: 100% 100%;
+                }
+                .six {
+                    width: 100%;
+                    @include display(flex, row);
+                    margin-top: px2rem(50px);
+                    .left {
+                        width: 50%;
+                        height: px2rem(200px);
+                        background: url(../img/008.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                    .right {
+                        width: 40%;
+                        height: px2rem(200px);
+                        background: url(../img/010.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                .seven {
+                    width: 100%;
+                    height: px2rem(120px);
+                    background: url(../img/001.jpg) no-repeat;
+                    background-size: 100% 100%;
+                }
+                .eight {
+                    width: 100%;
+                    height: px2rem(600px);
+                    background: url(../img/002.jpg) no-repeat;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+    }
+}

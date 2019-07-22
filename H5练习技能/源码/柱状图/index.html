@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<canvas id="mycanvas" width="900" height="700" style="border:1px solid #ccc"></canvas>
+
+<body>
+    <script>
+        var mycanvas = document.querySelector("#mycanvas");
+        var ctx = mycanvas.getContext('2d');
+        var offsetx = 20,
+            offsety = 50,
+            w = 30;
+        var arr = [60, 90, 150, 130, 170, 190, 125, 175, 155, 165, 155, 145]
+
+        function border(x1, y1, x2, y2) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        border(30, 30, 30, 530);
+        border(780, 30, 780, 530);
+
+        function linex(x1, y1, x2, y2) {
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+            ctx.closePath();
+        }
+        for (var i = 0; i < 11; i++) {
+            linex(30, 30 + offsety * i, 780, 30 + offsety * i);
+            ctx.fillText(i + 19 * i, 10, 535 - offsety * i);
+        }
+        console.log(50 / 20)
+        for (var i = 1; i <= 12; i++) {
+            ctx.fillStyle = "skyblue";
+            ctx.fillText(i + "月", 10 + 55 * i, 550);
+        }
+        arr.map(function(v, i) {
+            ctx.beginPath();
+            ctx.fillStyle = "skyblue";
+            ctx.fillRect(60 + 55 * i, 530, 30, (-v * 2.5));
+            ctx.textBaseline = "middle"
+            ctx.fillText(v, 60 + 56 * i, 520 - v * 2.5);
+        })
+    </script>
+</body>
+
+</html>s

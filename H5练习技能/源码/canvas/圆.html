@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="600" height="600" style="border: 1px solid #ccc"></canvas>
+</body>
+<script>
+    var mycanvas = document.querySelector("#mycanvas");
+    var ctx = mycanvas.getContext("2d");
+    var deg = Math.PI / 180;
+    ctx.beginPath();
+    ctx.moveTo(300, 300);
+    ctx.arc(300, 300, 100, 0, 340 * deg);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(310, 250, 20, 0, 360);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(318, 260, 4, 0, 360);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.fillRect(280, 200, 3, 30);
+    ctx.fill();
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.fillRect(270, 200, 3, 40);
+    ctx.fill();
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.fillRect(260, 200, 3, 50);
+    ctx.fill();
+    ctx.closePath();
+</script>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            display: flex;
+        }
+        
+        .box1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin-right: 100px;
+        }
+        
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 50px 50px;
+        }
+        
+        .box2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <img src="1.jpg" alt="" draggable="true" id="tar">
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+<script>
+    var box1 = document.querySelector('.box1');
+    var box2 = document.querySelector('.box2');
+    tar.ondragstart = function(e) {
+        console.log(e.target)
+        draggable = e.target;
+    }
+    box2.ondragover = function(e) {
+        e.preventDefault();
+    }
+    box2.ondrop = function(e) {
+        box2.appendChild(draggable);
+    }
+    box1.ondragover = function(e) {
+        e.preventDefault();
+    }
+    box1.ondrop = function(e) {
+        box1.appendChild(draggable);
+    }
+</script>
+
+</html>

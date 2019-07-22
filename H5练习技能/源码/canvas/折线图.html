@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="600" height="600" style="border: 1px solid #ccc"></canvas>
+</body>
+<script>
+    var mycanvas = document.querySelector("#mycanvas");
+    var ctx = mycanvas.getContext('2d');
+    var offsetX = offsetY = 100;
+    var data = [30, 40, 50, 60, 70, 80];
+    ctx.beginPath();
+    ctx.moveTo(50, 30);
+    ctx.lineTo(50, 550);
+    ctx.lineTo(580, 550);
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.moveTo(40, 40);
+    ctx.lineTo(50, 30);
+    ctx.lineTo(60, 40);
+    ctx.stroke();
+    ctx.closePath();
+
+
+    ctx.beginPath();
+    ctx.moveTo(570, 540);
+    ctx.lineTo(580, 550);
+    ctx.lineTo(570, 560);
+    ctx.stroke();
+    ctx.closePath();
+
+    // ctx.beginPath();
+    // ctx.moveTo(50, 550);
+    // ctx.lineTo(50, 560);
+    // ctx.stroke();
+    // ctx.closePath();
+    for (var i = 0; i <= 5; i++) {
+        ctx.beginPath();
+        ctx.moveTo(50 + offsetX * i, 550);
+        ctx.lineTo(50 + offsetX * i, 560);
+        ctx.stroke();
+        ctx.closePath();
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText((i + 1), 50 + offsetX * i, 570)
+    }
+
+    data.map(function(v, i) {
+        ctx.beginPath();
+        ctx.moveTo(50, 550 - offsetY * i);
+        ctx.lineTo(40, 550 - offsetY * i);
+        ctx.stroke();
+        ctx.closePath();
+        ctx.fillText(v, 30, 550 - offsetY * i)
+    })
+    ctx.closePath();
+
+
+    ctx.beginPath();
+    for (var i = 0; i <= 5; i++) {
+        if (i == 0) {
+            ctx.moveTo(50 + offsetX * i, (random(30, 80) - 30) * offsetX);
+        }
+        ctx.lineTo(50 + offsetX * i, 550 - (random(30, 80) - 30) * 10);
+    }
+    ctx.stroke();
+    ctx.closePath();
+
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+</script>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .wrapper {
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .list {
+            width: 100%;
+        }
+        
+        .list li {
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .loding {
+            height: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .loding img {
+            height: 30px;
+        }
+        
+        .top {
+            width: 50px;
+            height: 50px;
+            background: green;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 10px;
+            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+        </ul>
+        <div class="loding">
+            <img src="img/1.gif" alt="">
+        </div>
+        <div class="top">
+            返回顶部
+        </div>
+        <script>
+            var wrap = document.querySelector('.wrapper');
+            var list = document.querySelector('.list');
+            var loding = document.querySelector('.loding');
+            var top = document.querySelector('.top');
+            var load = {
+                winH: 0,
+                offsetT: 0,
+                page: 1, //当前页
+                pageSize: 10, //一夜多少条
+                init: function() {
+                    this.scroll();
+                    var that = this;
+                    top.onclick = function() {
+                        that.backtop();
+                    }
+                },
+                backtop: function() {
+                    var that = load;
+                    var offsetT = wrap.scrollTop - 50;
+                    wrap.scrollTop = offsetT;
+                    if (offsetT >= 50) {
+                        requestAnimationFrame(that.backtop)
+                    } else {
+                        cancelAnimationFrame(that.backtop)
+                    }
+                },
+                scroll: function() {
+                    var that = this;
+                    that.winH = window.innerHeight;
+                    wrap.onscroll = function() {
+                        that.offsetT = loding.offsetTop;
+                        console.log(that.offsetT)
+                        console.log(this.scrollTop)
+                        if (that.winH + this.scrollTop > that.offsetT + 20) {
+                            wrap.onscroll = null;
+                            that.page++;
+                            if (that.page <= 5) {
+                                that.setHtml();
+                            } else {
+                                loding.innerHTML = '__我是有底线的__'
+                            }
+
+                        }
+                    }
+                },
+                setHtml: function() {
+                    var html = '';
+                    for (var i = 0; i < 10; i++) {
+                        html += '<li>新的标签' + (i + 1) + '</li>';
+                    }
+                    list.innerHTML += html;
+                    this.scroll();
+                }
+            }
+            load.init();
+        </script>
+</body>
+
+
+</html>

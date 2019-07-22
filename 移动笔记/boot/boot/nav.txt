@@ -1,0 +1,13 @@
+nav 表示导航的类名
+
+nav-list 列表导航
+
+nav-tabs 切换性导航 标签页导航
+
+nav-pills 胶囊试导航
+
+nav-stacked  叠放式导航
+
+dropdown 加给li表示下拉样式导航
+
+breadcrumb面包屑导航

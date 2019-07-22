@@ -1,0 +1,131 @@
+@import"_minix.scss";
+@import"common.scss";
+.wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.shadow {
+    width: 100%;
+    height: 100%;
+    background: url(../image/talk_share_bg.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    filter: blur(20px);
+}
+
+.main {
+    height: pxTorem(300px);
+    width: pxTorem(300px);
+    background: rgba($color: #fff, $alpha: 0.3);
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    margin-left: pxTorem(-150px);
+    margin-top: pxTorme(-150px);
+    border-radius: 100%;
+    z-index: 99;
+    animation: moveing 5s linear infinite paused;
+}
+
+.box {
+    height: pxTorem(260px);
+    width: pxTorem(260px);
+    background: url(../image/talk_share_bg.png) no-repeat center center;
+    position: absolute;
+    background-size: cover;
+    left: 50%;
+    top: 7%;
+    margin-left: pxTorem(-130px);
+    margin-top: pxTorme(-130px);
+    border-radius: 100%;
+    z-index: 99;
+}
+
+.moving {
+    animation-play-state: running;
+}
+
+@keyframes moveing {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.progressbar {
+    width: 100%;
+    @include box_flex;
+    padding: 0 pxTorem(15px);
+    @include sizing;
+    @include justify(space-between);
+    @include align;
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    z-index: 99;
+    span {
+        color: #fff;
+    }
+    div.progressbarContent {
+        width: 70%;
+        height: pxTorem(5px);
+        background: rgba(0, 0, 0, 0.3);
+        margin: 0 pxTorem(8px);
+        position: absolute;
+        left: 0;
+        bottom: 25%;
+        margin-left: 15%;
+        .progress {
+            height: 100%;
+            width: pxTorem(10px);
+            background: rgba($color: red, $alpha: 0.3);
+            top: 0;
+            bottom: 9%;
+            z-index: 99;
+        }
+    }
+    .progressBtn {
+        height: pxTorem(8px);
+        width: pxTorem(8px);
+        background: #fff;
+        border-radius: 100%;
+        display: inline-block;
+        position: absolute;
+        left: pxTorem(10px);
+        top: pxTorem(-2px);
+    }
+}
+
+.btn {
+    width: 100%;
+    padding: 0 pxTorem(30px);
+    @include sizing;
+    @include box_flex;
+    @include justify(space-between);
+    position: absolute;
+    left: 0;
+    bottom: pxTorem(30px);
+    span {
+        height: pxTorem(30px);
+        width: pxTorem(30px);
+    }
+    span:nth-child(1) {
+        background: url(../image/z.png) no-repeat 0 0;
+        background-size: 100% 100%;
+    }
+    span:nth-child(2) {
+        background: url(../image/zanting.png) no-repeat 0 0;
+        background-size: 100% 100%;
+    }
+    span:nth-child(3) {
+        background: url(../image/y.png) no-repeat 0 0;
+        background-size: 100% 100%;
+    }
+    span.active {
+        background: url(../image/bofang.png) no-repeat 0 0;
+        background-size: 100% 100%;
+    }
+}

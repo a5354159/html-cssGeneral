@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="format-detection" content="telephone=no,email=no,address=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,max-scale=1.0,min-scale=1.0,user-scalable=no">
+	<title>Document</title>
+	<style>
+	    *{margin:0;padding: 0}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.wrap{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			max-width: 600px;
+			position: relative;
+			margin: 0 auto;
+			position: relative;
+		}
+		.wrap .day{
+			width: 100%;
+			height: 100%;
+			background: url(img/bg1.jpg) no-repeat;
+			background-size: 100% 100%;
+			background-position: center top;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+			padding-top: 20%;
+		}
+		.wrap .day .content{
+			width: 90%;
+			margin: 0 auto;
+			position:relative;
+		}
+		.wrap .day .content .home{
+			width: 100%;
+		}
+		.wrap .day .content .sun{
+		  width: 15%;
+		  position: absolute;
+		  left:42.5%;
+		  top:-40%;
+		  -webkit-transform:rotate(-50deg);
+		  -webkit-transform-origin:center  700%;
+		}
+		.wen{
+			position: absolute;
+			width: 60%;
+			top: 5%;
+			left: 20%;
+			z-index: 100;
+		} 
+	</style>
+</head>
+<body>
+   <div class="wrap">
+        <img src="img/txt2.png" alt="" class="wen">
+		<div class="day">
+			<div class="content">
+				<img src="img/island1.png" alt="" class="home">
+				<img src="img/sun.png" alt="" class="sun">
+			</div>
+		</div>
+    </div>
+</body>
+</html>

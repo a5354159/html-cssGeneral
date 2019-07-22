@@ -1,0 +1,340 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 0;
+  font-family: STHeitiSC-Light;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html,
+body,
+form,
+fieldset,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -webkit-text-size-adjust: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  font-family: arial, sans-serif;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+ins,
+a {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  display: inline-block;
+}
+
+input,
+textarea {
+  border: none;
+  background: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -ms-tap-highlight-color: transparent;
+  -o-tap-highlight-color: transparent;
+}
+
+/*html {
+    font-size: $browser-default-font-size;
+}*/
+html {
+  font-size: 37.5px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.shadow {
+  width: 100%;
+  height: 100%;
+  background: url(../image/talk_share_bg.png) no-repeat 0 0;
+  background-size: 100% 100%;
+  filter: blur(20px);
+}
+
+.main {
+  height: 8rem;
+  width: 8rem;
+  background: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  margin-left: -4rem;
+  margin-top: pxTorme(-150px);
+  border-radius: 100%;
+  z-index: 99;
+  animation: moveing 5s linear infinite paused;
+}
+
+.box {
+  height: 6.93333rem;
+  width: 6.93333rem;
+  background: url(../image/talk_share_bg.png) no-repeat center center;
+  position: absolute;
+  background-size: cover;
+  left: 50%;
+  top: 7%;
+  margin-left: -3.46667rem;
+  margin-top: pxTorme(-130px);
+  border-radius: 100%;
+  z-index: 99;
+}
+
+.moving {
+  animation-play-state: running;
+}
+
+@keyframes moveing {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.progressbar {
+  width: 100%;
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  padding: 0 0.4rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 20%;
+  z-index: 99;
+}
+
+.progressbar span {
+  color: #fff;
+}
+
+.progressbar div.progressbarContent {
+  width: 70%;
+  height: 0.13333rem;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 0 0.21333rem;
+  position: absolute;
+  left: 0;
+  bottom: 25%;
+  margin-left: 15%;
+}
+
+.progressbar div.progressbarContent .progress {
+  height: 100%;
+  width: 0.26667rem;
+  background: rgba(255, 0, 0, 0.3);
+  top: 0;
+  bottom: 9%;
+  z-index: 99;
+}
+
+.progressbar .progressBtn {
+  height: 0.21333rem;
+  width: 0.21333rem;
+  background: #fff;
+  border-radius: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 0.26667rem;
+  top: -0.05333rem;
+}
+
+.btn {
+  width: 100%;
+  padding: 0 0.8rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  bottom: 0.8rem;
+}
+
+.btn span {
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+.btn span:nth-child(1) {
+  background: url(../image/z.png) no-repeat 0 0;
+  background-size: 100% 100%;
+}
+
+.btn span:nth-child(2) {
+  background: url(../image/zanting.png) no-repeat 0 0;
+  background-size: 100% 100%;
+}
+
+.btn span:nth-child(3) {
+  background: url(../image/y.png) no-repeat 0 0;
+  background-size: 100% 100%;
+}
+
+.btn span.active {
+  background: url(../image/bofang.png) no-repeat 0 0;
+  background-size: 100% 100%;
+}

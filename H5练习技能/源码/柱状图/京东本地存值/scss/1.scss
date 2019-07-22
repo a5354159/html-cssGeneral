@@ -1,0 +1,134 @@
+@import "_minix.scss";
+@import "common.scss";
+.wrapper {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    @include direction(column);
+}
+
+header {
+    width: 100%;
+    height: pxTorem(44px);
+    background: #ccc;
+    @include box_flex;
+    @include align;
+    padding: 0 pxTorem(15px);
+    @include sizing;
+    .left {
+        width: 10%;
+        .iconfont {
+            font-size: pxTorem(15px);
+        }
+    }
+    .center {
+        @include flex;
+        height: pxTorem(20px);
+        background: #fff;
+        margin-right: pxTorem(15px);
+        @include box_flex;
+        @include align;
+        border-radius: pxTorem(15px);
+        .iconfont {
+            font-size: pxTorem(12px);
+            padding: 0 pxTorem(10px);
+            @include sizing;
+        }
+        input {
+            @include flex;
+        }
+    }
+    .right {
+        width: 10%;
+        height: pxTorem(25px);
+        text-align: center;
+        background: red;
+        color: #fff;
+        line-height: pxTorem(25px);
+    }
+}
+
+section {
+    width: 100%;
+    @include flex;
+    padding: 0 pxTorem(15px);
+    @include sizing;
+    margin-top: pxTorem(10px);
+    .content {
+        width: 100%;
+        @include box_flex;
+        @include align;
+        justify-content: space-between;
+        span {
+            font-size: pxTorem(13px);
+        }
+        .iconfont {
+            font-size: pxTorem(15px);
+        }
+    }
+    .list {
+        width: 100%;
+        @include box_flex;
+        li {
+            padding: 0 pxTorem(5px);
+            @include sizing;
+            height: pxTorem(20px);
+            background: #ccc;
+            text-align: center;
+            line-height: pxTorem(20px);
+            border-radius: pxTorem(15px);
+            margin: pxTorem(5px);
+        }
+    }
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000, $alpha: 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    @include box_flex;
+    @include align;
+    justify-content: center;
+    .del {
+        width: 80%;
+        height: pxTorem(160px);
+        background: #fff;
+        border-radius: pxTorem(16px);
+        text-align: center;
+        .dec {
+            height: pxTorem(100px);
+            line-height: pxTorem(100px);
+            font-size: pxTorem(15px);
+        }
+        div {
+            width: 100%;
+            height: pxTorem(60px);
+            @include box_flex;
+            text-align: center;
+            line-height: pxTorem(60px);
+            span {
+                width: 50%;
+                color: #fff;
+                font-size: pxTorem(13px);
+            }
+            span:nth-child(1) {
+                width: 50%;
+                height: pxTorem(60px);
+                background: #fff;
+                border-right: 1px solid #ccc;
+                color: #000;
+                border-radius: 0 0 0 pxTorem(16px);
+            }
+            span:nth-child(2) {
+                width: 50%;
+                height: pxTorem(60px);
+                background: red;
+                border-radius: 0 0 pxTorem(16px) 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+
+   
+     transform
+
+     transition
+
+     透视：perspective:像素值
+
+
+ ================================
+
+  媒体查询:Media Query
+
+  一、作用：1.响应式  2.适配
+
+
+  二、Media Query的各种写法
+
+     1.	<link rel="stylesheet" href="css文件路径" media="设备类型 and (媒体特性)">
+
+
+    例如：	<link rel="stylesheet" href="./css/iphone5.css" media="screen and (min-width:640px)">
+
+
+       其中:
+
+            大于等于某个宽度：min-width:值
+            小于等于某个宽度：max-width:值
+
+
+   2.将媒体查询写在css文件中
+
+         device-width:设备实际宽度
+
+         orientation:检测横竖屏  landscape 横屏 | portrail 竖屏
+
+    
+         DPR:设备像素比  1.5,2,3  即: device pixel ratio
+
+检测移动设备宽度和高度：
+document.documentElement.clientWidth
+document.documentElement.clientHeight
+
+检测移动设备DPR:
+window.devicePixelRatio
+
+================================
+
+ 布局：表格布局，固定布局，响应式布局(百分比，em),浮动布局，定位布局，栅格布局，弹性布局(弹性盒，rem)
+ 
+
+ 多列布局:
+
+          -webkit-column-count:3;  /*栏数*/
+	  -webkit-column-gap:20px; /*栏间距*/
+	  -webkit-column-rule:3px dashed #00f; /*栏与栏之间的分隔线*/	
+	  -webkit-column-span:all;  /*将某个元素独立出来，可单独设置样式*/
+
+
+
+
+当手指点击链接时，如何取消a标签的灰度颜色：
+
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+
+   
+   实现文本省略号：
+只IE7(含)以下
+overflow:hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+
+
+多行省略号:
+overflow:hidden;
+text-overflow: ellipsis;
+display: -webkit-box; 老弹性盒
+-webkit-box-orient:vertical;子元素排列方式  vertical垂直排列
+-webkit-line-clamp:2;限制一个快元素显示的文本行数
+			
+
+-webkit-border-image:使用绝对或相对 url 地址指定背景图像 切割图片的量 图片的宽度显示  stretch | repeat | round   拉伸 | 重复 | 平铺 (其中stretch是默认值。) 
+  
+
+
+
+
+
+    

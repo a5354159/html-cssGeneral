@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="600" height="600" style="border: 1px solid #ccc; background: rgb(243, 177, 10)"></canvas>
+</body>
+<script>
+    var mycanvas = document.querySelector("#mycanvas");
+    var ctx = mycanvas.getContext("2d");
+    var sdeg = 90 * Math.PI / 180;
+    var edeg = 270 * Math.PI / 180;
+    ctx.beginPath();
+    ctx.arc(300, 300, 100, sdeg, edeg)
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(300, 300, 100, sdeg, edeg, true);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(300, 250, 50, 0, 360);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(300, 350, 50, 0, 360);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(300, 250, 25, 0, 360);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.arc(300, 350, 25, 0, 360);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();
+</script>
+
+</html>

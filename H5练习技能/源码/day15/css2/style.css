@@ -1,0 +1,217 @@
+@import url(conmon.css);
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+.wraper, section {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+header {
+  height: .5rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+header .head_top {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head_top a {
+  display: -webkit-flex;
+  flex-direction: column;
+  color: #fff;
+}
+header .head_top a i.icon {
+  text-align: center;
+  font-size: .24rem;
+}
+header .head_top .top_cen {
+  width: 75%;
+  background: #fff;
+  display: -webkit-flex;
+  height: .3rem;
+  border-radius: .2rem;
+  padding: .18rem .08rem;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head_top .top_cen i.icon-fangdajing {
+  align-self: center;
+}
+header .head_top .top_cen input {
+  width: 73%;
+  text-indent: .06rem;
+}
+header .head_top .top_cen a {
+  color: #989ba1;
+  font-size: 12px;
+}
+header .head_top .top_cen a i.icon-gongzuo {
+  font-size: 12px;
+}
+
+.scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.banner li:not(:first-child) {
+  display: none;
+}
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.banner p {
+  position: absolute;
+  bottom: .1rem;
+  right: .1rem;
+  display: -webkit-flex;
+}
+.banner p span {
+  display: block;
+  width: .1rem;
+  height: .04rem;
+  background: #a976f3;
+  margin-left: .03rem;
+  border-radius: 2px;
+}
+.banner p span.bg {
+  background: #fff;
+}
+
+.go_sec {
+  width: 95%;
+  margin: 0 auto;
+  height: auto;
+}
+.go_sec a {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.go_sec a img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.go_sec a span {
+  position: absolute;
+  top: 50%;
+  right: 7%;
+}
+
+.tem_sec {
+  width: 100%;
+  background: #f9ede4;
+  height: auto;
+}
+.tem_sec .tem_inner {
+  width: 90%;
+  margin: 0 auto;
+}
+.tem_sec .tem_inner h3 {
+  font-size: .16rem;
+  margin-top: .07rem;
+  display: -webkit-flex;
+  justify-content: space-between;
+}
+.tem_sec .tem_inner h3 p {
+  color: #e01217;
+  font-weight: bold;
+}
+.tem_sec .tem_inner h3 p span {
+  color: #222;
+  margin-left: .05rem;
+  font-size: 12px;
+}
+.tem_sec .tem_inner h3 p span b {
+  font-size: 18px;
+  font-weight: bold;
+}
+.tem_sec .tem_inner h3 a {
+  margin-top: .02rem;
+  color: #000;
+}
+.tem_sec .tem_inner h3 a span {
+  width: .12rem;
+  height: .12rem;
+  color: #fff;
+  background: #000;
+  border-radius: 50%;
+  float: right;
+  line-height: .12rem;
+  text-align: center;
+  margin-top: .04rem;
+  margin-left: .08rem;
+}
+.tem_sec .tem_inner .girl_one {
+  display: -webkit-flex;
+  margin-top: .1rem;
+}
+.tem_sec .tem_inner .girl_one a {
+  width: 45%;
+  height: auto;
+  align-self: flex-end;
+}
+.tem_sec .tem_inner .girl_one a img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.tem_sec .tem_inner .girl_one .girl_right {
+  width: 55%;
+  height: auto;
+  display: -webkit-flex;
+  justify-content: space-between;
+  margin-bottom: .06rem;
+}
+.tem_sec .tem_inner .girl_one .girl_right .right_one {
+  width: 47%;
+  height: auto;
+  background: #fff;
+  border-radius: .05rem;
+}
+.tem_sec .tem_inner .girl_one .girl_right .right_one h4 {
+  text-align: center;
+  margin-top: .08rem;
+  font-weight: bold;
+}
+.tem_sec .tem_inner .girl_one .girl_right .right_one img {
+  width: 40%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.tem_sec .tem_inner .girl_one .girl_right .right_one button {
+  width: .45rem;
+  height: .22rem;
+  border-radius: .1rem;
+  border: none;
+  color: #fff;
+  background: red;
+  margin: .05rem auto;
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */

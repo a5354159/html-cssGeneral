@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0}
+		.box{
+			width: 200px;
+			height: 80px;
+			text-align: center;
+			line-height: 80px;
+			font-size: 24px;
+			font-weight: bolder;
+			border:solid 1px orange;
+			margin: 100px 0 0 100px;
+			-webkit-animation:bounceInDown 3s ease-in-out;
+			/* -webkit-animation-fill-mode:backwards; */
+		}
+
+		@-webkit-keyframes bounceInLeft {
+		  0%, 60%, 75%, 90%, 100% {
+		    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+		    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+		  }
+
+		  0% {
+		    opacity: 0;
+		    -webkit-transform: translate3d(-3000px, 0, 0);
+		    transform: translate3d(-3000px, 0, 0);
+		  }
+
+		  60% {
+		    opacity: 1;
+		    -webkit-transform: translate3d(25px, 0, 0);
+		    transform: translate3d(25px, 0, 0);
+		  }
+
+		  75% {
+		    -webkit-transform: translate3d(-10px, 0, 0);
+		    transform: translate3d(-10px, 0, 0);
+		  }
+
+		  90% {
+		    -webkit-transform: translate3d(5px, 0, 0);
+		    transform: translate3d(5px, 0, 0);
+		  }
+
+		  100% {
+		    -webkit-transform: none;
+		    transform: none;
+		  }
+		}
+		@-webkit-keyframes bounceInDown {
+		  0%, 60%, 75%, 90%, 100% {
+		    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+		    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+		  }
+
+		  0% {
+		    opacity: 0;
+		    -webkit-transform: translate3d(0, -3000px, 0);
+		    transform: translate3d(0, -3000px, 0);
+		  }
+
+		  60% {
+		    opacity: 1;
+		    -webkit-transform: translate3d(0, 25px, 0);
+		    transform: translate3d(0, 25px, 0);
+		  }
+
+		  75% {
+		    -webkit-transform: translate3d(0, -10px, 0);
+		    transform: translate3d(0, -10px, 0);
+		  }
+
+		  90% {
+		    -webkit-transform: translate3d(0, 5px, 0);
+		    transform: translate3d(0, 5px, 0);
+		  }
+
+		  100% {
+		    -webkit-transform: none;
+		    transform: none;
+		  }
+		}
+		/* @-webkit-keyframes aniw{
+			form{
+				width:350px;
+			}
+		
+			30%{
+				width: 500px;
+			}
+			
+			65%{
+				width: 750px;
+			}
+			to{
+				width: 1000px;
+			}
+		} */
+
+		.round{
+			width: 200px;
+			height: 200px;
+			text-align: center;
+			line-height: 200px;
+			font-size: 24px;
+			font-weight: bolder;
+			border:solid 1px orange;
+			margin: 100px 0 0 100px;
+			-webkit-animation:round 3s ease-in .5s;
+		}
+
+		@-webkit-keyframes round{
+			form{
+				border-radius: 0;
+				transform: translate3d(0,0,0);
+				background: #0ff;
+			}
+
+			30%{
+				border-radius: 20%;
+				transform: translate3d(200px,0,0);
+				background: yellow;
+			}
+
+			65%{
+				border-radius: 35%;
+				transform: translate3d(500px,0,0);
+				background: green;
+			}
+
+			to{
+				border-radius: 50%;
+				transform: translate3d(700px,0,0);
+				background: pink;
+			}
+		}
+	</style>
+</head>
+<body>
+
+
+   <div class="box">
+   	  开始你的表演
+   </div>
+
+   <div class="round">
+   	 
+   	  我要变圆
+
+   </div>
+
+   <textarea>
+   	
+   </textarea>
+	
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<style>
+		div[class*="col"]{
+         background: #ccc;
+      }
+      .row{
+         border-bottom: dotted 1px #666;
+      }
+      .man{
+         width:960px;
+         margin: 0 auto;
+      }
+      table{
+         margin: 10px auto;
+      }
+      .nav{
+         margin-top: 100px;
+      }
+	</style>
+</head>
+<body>
+
+   <div class="man text-justify">
+   	  <div class="row">
+   	  	 <div class="col-md-5">你好</div>
+   	  	 <div class="col-md-5 col-md-offset-2">hello</div>
+   	  </div>
+        <div class="row">
+           <div class="col-md-3">3</div>
+           <div class="col-md-2 col-md-offset-1">2</div>
+           <div class="col-md-2 col-md-offset-1">2</div>
+           <div class="col-md-2">2</div>
+           <div class="col-md-1">2</div>
+        </div>
+   </div>
+
+   <table class="table text-center table-striped table-bordered table-hover table-condensed table-responsive">
+      <tr>
+         <td>姓名</td>
+         <td>年龄</td>
+         <td>性别</td>
+         <td>id</td>
+         <td>操作</td>
+      </tr>
+      <tr>
+         <td>王凡</td>
+         <td>12</td>
+         <td>女</td>
+         <td>9527</td>
+         <td>删除</td>
+      </tr>
+      <tr>
+         <td>徐非凡</td>
+         <td>18</td>
+         <td>女</td>
+         <td>9523</td>
+         <td>删除</td>
+      </tr>
+      <tr>
+         <td>小金毛</td>
+         <td>2</td>
+         <td>男</td>
+         <td>123456</td>
+         <td>删除</td>
+      </tr>
+   </table>
+
+   <button class="btn btn-group dropup">
+      阿尼玛<span class="caret dropup"></span>
+   </button>
+   <span class="btn btn-danger btn-link">
+      阿玛尼
+   </span>
+
+   <ul class="nav nav-tabs">
+      <li class="active"><a href="">hello</a></li>
+      <li><a href="">hello</a></li>
+      <li><a href="">hello</a></li>
+      <li><a href="">hello</a></li>
+   </ul>
+
+   <!-- <span class="btn btn-success">
+        ok
+   </span>
+   
+   <div class="nav nav-pills">
+        <a href="javascript:void(0)">abc</a>
+        <a href="javascript:void(0)">efg</a>
+        <a href="javascript:void(0)">123</a>
+        <a href="javascript:void(0)">456</a>
+        <a href="javascript:void(0)">987</a>
+   </div> -->
+	
+</body>
+</html>

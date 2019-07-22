@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="600" height="600" style="border: 1px solid #ccc"></canvas>
+    <input type="color" id="color">颜色
+    <input type="range" max="10" value="6" id="range">
+    <button id="resetBtn">橡皮擦</button>
+    <button id="save">保存</button>
+</body>
+<script>
+    var mycanvas = document.querySelector('#mycanvas');
+    var ctx = mycanvas.getContext('2d');
+
+    var color = document.querySelector('#color');
+    var range = document.querySelector('#range');
+    var resetBtn = document.querySelector('#resetBtn');
+    var save = document.querySelector('#save');
+    mycanvas.onmousedown = function(e) {
+        ctx.beginPath();
+        ctx.lineWidth = range.value;
+        ctx.moveTo(e.offsetX, e.offsetY);
+        this.onmousemove = function(e) {
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+        }
+    }
+    mycanvas.onmouseup = function() {
+        mycanvas.onmousemove = null;
+        ctx.closePath();
+    }
+    color.onchange = function() {
+        ctx.strokeStyle = this.value;
+    }
+    resetBtn.onclick = function() {
+        if (this.innerHTML === "橡皮擦") {
+            this.innerHTML = "画布";
+            ctx.globalCompositeOperation = "destination-out";
+        } else {
+            this.innerHTML = "橡皮擦"
+            ctx.globalCompositeOperation = "source-over";
+        }
+    }
+
+    save.onclick = function() {
+        var url = mycanvas.toDataURL();
+        var img = new Image();
+        img.src = url;
+        document.body.appendChild(img);
+    }
+</script>
+
+</html>

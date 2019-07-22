@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .show {
+            width: 100%;
+            height: 100%;
+            background: url(talk_share_bg.png)no-repeat 0 0;
+            background-size: 100% 100%;
+            filter: blur(20px);
+        }
+        
+        .content {}
+        
+        .contentbox {
+            width: 460px;
+            height: 460px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -230px;
+            margin-top: -230px;
+            background: rgba(255, 255, 255, .5);
+            border-radius: 100%;
+            animation: runing 2s linear infinite paused;
+        }
+        
+        .contentboxpic {
+            height: 410px;
+            width: 410px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -205px;
+            margin-top: -205px;
+            background: url(talk_share_bg.png)no-repeat 0 0;
+            background-size: 100% 100%;
+            border-radius: 100%;
+            z-index: 9;
+        }
+        
+        .btn {
+            height: 196px;
+            width: 196px;
+            background: url(btnPlay.png)no-repeat 0 0;
+            background-size: 100% 100%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -98px;
+            margin-top: -98px;
+            border-radius: 100%;
+            z-index: 99;
+        }
+        
+        .pause {
+            animation-play-state: running;
+        }
+        
+        @keyframes runing {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .active {
+            background: url("btnPause.png") no-repeat 0 0;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="show"></div>
+        <div class="content">
+            <div class="contentbox">
+                <div class="contentboxpic"></div>
+            </div>
+            <div class="btn">
+                <audio src="bg.mp3"></audio>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var content = document.querySelector('.content');
+    var contentbox = document.querySelector('.contentbox');
+    var btn = document.querySelector('.btn');
+    var audio = document.querySelector('audio');
+    content.onclick = function() {
+        if (audio.paused) {
+            audio.play();
+            contentbox.classList.add('pause');
+            btn.classList.add('active');
+        } else {
+            audio.pause();
+            contentbox.classList.remove('pause');
+            btn.classList.remove('active');
+        }
+    }
+    audio.onended = function() {
+        contentbox.classList.remove('pause');
+        btn.classList.remove('active');
+    }
+</script>
+
+</html>

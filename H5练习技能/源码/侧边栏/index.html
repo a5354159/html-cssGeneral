@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .content {
+            height: 100%;
+            width: 100%;
+            background: red;
+        }
+        
+        .mark {
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, .5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        
+        .left {
+            height: 100%;
+            width: 0;
+            background: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 99;
+            transition: all 2s;
+        }
+        
+        .active {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <button class="btn">点击</button>
+        </div>
+        <div class="mark"></div>
+        <div class="left"></div>
+    </div>
+    <script src="js/zepto.js"></script>
+    <script>
+        $('.btn').on('click', function() {
+            $('.mark').show();
+            $('.left').addClass('active');
+        })
+    </script>
+</body>
+
+</html>

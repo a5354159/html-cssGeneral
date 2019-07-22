@@ -1,0 +1,72 @@
+@charset "UTF-8";  //scss的字符编码
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "楷体";
+  text-size-adjust: 100%; }
+
+ul, li {
+  list-style: none; }
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 62.5%; }
+
+img, div, body, html, ul, li, a {
+  -webkit-touch-callout: none; }
+
+input, button {
+  outline: 0; }
+
+button {
+  cursor: pointer; }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color:blue; }
+input{-webkit-appearance:none; border:0}
+
+%mt{
+  margin-top:1rem;
+  color:#0f0;
+}
+.text{
+  width:100%;
+  height:5rem;
+  background:none;
+  border:{
+  radius:0;
+  bottom:1px solid #ccc;
+  }
+}
+.text_num{
+  @extend .text;
+  @extend %mt;
+}
+.num{
+  @extend .text;
+}
+$aw:10rem;
+$bw:3.5rem;
+$cw:1.5rem;
+div{
+  width:$aw+$bw - $cw;
+  height:$aw*1.5;
+}
+p{
+  font:100px/2px;//纯css，不是除法运算
+  $width:20rem;
+  width:$width/2;//声明了变量，是除法运算
+  height:(50rem/5);//加了小括号，是除法运算
+  margin-left:1.4rem+8rem/2;//使用了“+”号，是除法运算
+  margin-top:(100rem/10rem);
+  /*color:#010203 + #040506;*/ //运算公式：01+04、02+05、03+06
+  color:(#222222 / 2);
+}
+

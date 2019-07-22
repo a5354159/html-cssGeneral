@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvs" style="border:1px solid #000;" height="600" width="600"></canvas>
+    <script>
+        var canvs = document.querySelector("#canvs");
+        var ctx = canvs.getContext("2d");
+        var deg = Math.PI / 180;
+        var num = 0;
+
+        //随机份数
+        var len = random(5, 9);
+        console.log(len);
+        var sum = 0;
+        var numStr = [];
+        for (var i = 0; i < len; i++) {
+            numStr.push(random(30, 160))
+        }
+
+        //总份数
+        numStr.map(function(v, i) {
+            sum += v;
+        })
+        numStr.map(function(v, i) {
+            var du = v / sum * 360;
+            num += du;
+            ctx.beginPath();
+            ctx.fillStyle = color();
+            ctx.arc(300, 300, 160, (num - du) * deg, num * deg);
+            ctx.lineTo(300, 300);
+            ctx.fill();
+            ctx.closePath();
+        })
+
+        //白色圆心
+        ctx.beginPath();
+        ctx.fillStyle = "#fff";
+        ctx.arc(300, 300, 130, 0, 360);
+        ctx.fill();
+        ctx.closePath();
+
+        function color() {
+            var col = "0123456789abcdef";
+            var str = "#";
+            for (var i = 0; i < 6; i++) {
+                var ind = random(0, 15);
+                str += col[ind];
+            }
+            return str;
+        }
+
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+    </script>
+</body>
+
+</html>

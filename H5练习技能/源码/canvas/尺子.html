@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #canvas {
+            border: 1px solid #000;
+            margin: 10px auto;
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="400"></canvas>
+    <script>
+        var can = document.querySelector('#canvas');
+        var ctx = can.getContext('2d');
+        ctx.beginPath();
+        ctx.fillStyle = "#eee";
+        ctx.rect(10, 180, 480, 40);
+        ctx.fill();
+        ctx.stroke();
+        //线间隔
+        var xnum = (480 - 20) / 19 / 5;
+        var sum = 19 * 5 + 1;
+        var num = 0;
+        ctx.fillStyle = "#000";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        for (var i = 0; i < sum; i++) {
+            ctx.beginPath();
+            ctx.moveTo(20 + xnum * i, 180);
+            if (i % 5 == 0) {
+                ctx.lineTo(20 + xnum * i, 200);
+                num++;
+                ctx.fillText(num, 20 + xnum * i, 200)
+            } else {
+                ctx.lineTo(20 + xnum * i, 192);
+            }
+            ctx.stroke();
+        };
+    </script>
+</body>
+
+</html>

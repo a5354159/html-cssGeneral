@@ -1,0 +1,54 @@
+canvas 画布 默认宽300 高150
+canvas宽高必须通过属性设置
+canvas和img可以直接通过width和height属性设置或获取宽高
+
+获取画布
+    canvas节点.getContext('2d')
+
+设置起点
+    画布.moveTo(x,y)
+设置终点
+    画布.lineTo(x,y)
+描边
+    画布.stroke(); (默认黑色)
+设置描边颜色
+    画布.strokeStyle = 颜色值
+设置描边宽度
+    画布.lineWidth = number
+填充
+    画布.fill();
+设置填充颜色
+    画布.fillStyle = 颜色值
+开始路径
+    画布.beginPath()
+结束路径
+    画布.closePath()
+绘制矩形
+    画布.rect(x,y,w,h); 透明
+    w：width 正数向右负数向左
+    h：height 正数向下负数向上
+    画布.fillRect(x,y,w,h)  rect()=>fill()
+    画布.strokeRect(x,y,w,h)  rect()=>stroke()
+清除矩形区域内容
+    画布.clearRect(x,y,w,h)
+绘制弧形
+    画布.arc(x,y,r,start,end,顺时针（默认值false）或逆时针（true）)
+    x,y 圆心点
+    r 半径
+    start 起始弧度  0度再3点钟方向
+    end 终止弧度  
+Math.PI / 180 一角度等于多少弧度
+
+设置文字大小
+    画布.font = 文字大小 粗细 字体
+设置文字水平对齐方式
+    画布.textAlign = "center|left(默认)|right|start|end"
+设置文字垂直对齐方式
+    画布.textBaseline = "top|bottom(默认)|middle"
+绘制文字
+    画布.fillText(文本内容,x,y) 实心文字
+    画布.strokeText(文本内容,x,y) 空心文字
+
+
+移动画布原点
+    画布.translate(x,y) 默认再左上角

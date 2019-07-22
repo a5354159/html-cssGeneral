@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" autofocus placeholder="账号" required form="qwe">
+	<form id="qwe" action="">
+		<input type="text" list="asd">
+		<datalist id="asd">
+			<option value="山东">山东</option>
+			<option value="山东12">山东12</option>
+			<option value="山东112">山东112</option>
+			<option value="山东12222">山东12222</option>
+			<option value="山东222">山东222</option>
+			<option value="山东22222">山东22222</option>
+			<option value="山东2222">山东2222</option>
+			<option value="山东222">山东222</option>
+			<option value="山东231">山东231</option>
+		</datalist>
+		<input type="tel" pattern="[0-9]{11}">
+		<input type="number" min="0" max="10" step="5">
+		<input type="range" min="0" max="100" step="20">
+		<input type="EMAIL">
+		<input type="color">
+		<input type="date">
+		<input type="datetime-local">
+		<input type="month">
+		<input type="WEEK">
+		<input type="time">
+		
+		<input type="search">
+		
+		<input type="url">
+		<input type="submit">
+
+	</form>
+
+
+
+新增属性：
+		autofocus自动获取焦点
+		placeholder设置提示文字
+		required必填项
+		form属性等同于form元素的id时可以使不在一起的表单元素产生联系
+		min最小值
+		max最大值
+		step表示步长
+		pattern输入类型进行限定pattern[0-9]{11}表示数字类型是0-9之间的数字，要满足11位
+
+
+	datalist标签中要嵌套option
+	当输入框的list属性等于datalist的id时可以实现查询功能的输入框
+
+	
+</body>
+</html>

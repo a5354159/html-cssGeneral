@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+        
+        .content {
+            text-align: center;
+            font-size: 25px;
+            color: pink;
+            background: red;
+            width: 100%;
+            height: 100%;
+            line-height: 300px;
+        }
+        
+        #mycanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">一等奖</div>
+        <canvas id="mycanvas" height="300" width="300"></canvas>
+    </div>
+</body>
+
+<script>
+    var mycanvas = document.querySelector('#mycanvas');
+    var ctx = mycanvas.getContext('2d');
+    var content = document.querySelector('.content');
+    var arr = ['一等奖', '二等奖', '三等奖'];
+    ctx.beginPath();
+    ctx.fillStyle = "#ccc";
+    ctx.fillRect(0, 0, 300, 300);
+    mycanvas.onmousedown = function() {
+        mycanvas.onmousemove = function(e) {
+            ctx.clearRect(e.offsetX, e.offsetY, 20, 20);
+        }
+    }
+    mycanvas.onmouseup = function() {
+        mycanvas.onmousemove = null;
+    }
+
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    content.innerHTML = arr[random(0, 2)];
+</script>
+
+</html>

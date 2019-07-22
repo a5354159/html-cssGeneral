@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 150px;
+        }
+        
+        .mark {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file" id="file" multiple>
+
+</body>
+<script>
+    var file = document.querySelector('#file');
+    var img = document.querySelectorAll('img');
+    var body = document.querySelector('body');
+    file.onchange = function() {
+        var n;
+        var files = this.files;
+        for (var i = 0; i < 9; i++) {
+            var filereader = new FileReader();
+            var filesType = files[i].type.split('/')[1];
+            var filesSize = files[i].size;
+            var type = ['jpeg', 'jpg', 'png', 'gif', 'bmp', 'svg'];
+            var size = 3;
+            if (type.indexOf(filesType) == -1) {
+                alert('只能上传类型' + type.join(','));
+            }
+            if (filesSize > size * 1024 * 1024) {
+                alert("只能上传小于3m的图片")
+            }
+            filereader.readAsDataURL(files[i])
+
+            filereader.onload = function() {
+                var url = this.result;
+                var img = new Image();
+                img.src = url;
+                document.body.appendChild(img);
+
+            }
+        }
+        console.log(this.files)
+    }
+</script>
+
+</html>

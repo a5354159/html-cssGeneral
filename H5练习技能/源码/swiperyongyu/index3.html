@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="swiper/swiper-4.1.6.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .page-container {
+            width: 100%;
+            height: 60%;
+        }
+        
+        .page-wrapper,
+        .page-slide {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .page-slide img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .detil-container {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        
+        .detil-slide img {
+            width: 100%;
+            height: 80%;
+        }
+        
+        .detil-wrapper,
+        .detil-slide {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container page-container">
+        <div class="swiper-wrapper page-wrapper">
+            <div class="swiper-slide page-slide">
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="swiper-slide page-slide">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="swiper-slide page-slide">
+                <img src="img/3.jpg" alt="">
+            </div>
+            <div class="swiper-slide page-slide">
+                <img src="img/4.jpg" alt="">
+            </div>
+            <div class="swiper-slide page-slide">
+                <img src="img/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="swiper-pagination page-pagination"></div>
+    </div>
+
+
+    <div class="swiper-container detil-container">
+        <div class="swiper-wrapper detil-wrapper">
+            <div class="swiper-slide detil-slide">
+                <img src="img/1.jpg" alt="">
+            </div>
+            <div class="swiper-slide detil-slide">
+                <img src="img/2.jpg" alt="">
+            </div>
+            <div class="swiper-slide detil-slide">
+                <img src="img/3.jpg" alt="">
+            </div>
+            <div class="swiper-slide detil-slide">
+                <img src="img/4.jpg" alt="">
+            </div>
+            <div class="swiper-slide detil-slide">
+                <img src="img/5.jpg" alt="">
+            </div>
+        </div>
+        <div class="swiper-pagination detil-pagination"></div>
+    </div>
+</body>
+<script src="js/zepto.js"></script>
+<script src="swiper/swiper-4.1.6.min.js"></script>
+<script>
+    var myswiper = new Swiper('.page-container', {
+        pagination: {
+            el: ".page-pagination"
+        }
+    })
+    $('.page-container').on('click', '.page-slide', function() {
+        var ind = $(this).index();
+        $('.page-container').hide();
+        $('.detil-container').show();
+        console.log(myswiper2)
+        myswiper2.params.initialSlide = ind;
+        myswiper2.init();
+    })
+    var myswiper2 = new Swiper('.detil-container', {
+        pagination: {
+            el: '.detil-pagination',
+            type: 'fraction'
+        },
+        init: false
+    });
+</script>
+
+</html>

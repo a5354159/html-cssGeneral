@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <canvas class="canvas" width="200" height="200"></canvas>
+    <script>
+        function DrawArc(el, ops) {
+            this.ops = Object.assign({}, {
+                text: false
+            }, ops);
+            //el字符串或对象
+            this.el = el instanceof Object ? el : document.querySelector(el);
+            //获取画布
+            this.ctx = this.el.getContext('2d');
+            //获取画布宽高
+            this.w = this.el.width;
+            this.h = this.el.height;
+            //描边宽度
+            this.lineWidth = this.ops.lineWidth;
+            //圆心
+            this.x = this.w / 2;
+            this.y = this.h / 2;
+            //半径
+            this.r = this.x - this.lineWidth / 2;
+            this.init();
+        };
+        DrawArc.prototype = {
+            constructor: DrawArc,
+            init: function() {
+                this.ctx.lineWidth = this.lineWidth;
+                this.ctx.strokeStyle = this.ops.bgcolor;
+                this.ctx.font = "24px normal";
+                this.ctx.fillStyle = this.ops.fontColor;
+                this.ctx.textAlign = "center";
+                this.ctx.textBaseline = "middle";
+                var start = this.ops.start;
+                var end = this.ops.radius + start;
+                this.draw(start, end);
+            },
+            draw: function(start, end) {
+                var deg = Math.PI / 180;
+                var beginDeg = start;
+                var that = this;
+                var textDeg = 0;
+
+                function move() {
+                    beginDeg++;
+                    textDeg++;
+                    if (beginDeg < end) {
+                        requestAnimationFrame(move);
+                    }
+                    that.ctx.beginPath();
+                    that.ctx.clearRect(0, 0, that.w, that.h);
+                    if (that.ops.text) {
+                        that.ctx.fillText(Math.round(textDeg / 360 * 100) + '%', that.x, that.y);
+                    }
+                    that.ctx.arc(that.x, that.y, that.r, start * deg, beginDeg * deg);
+                    that.ctx.stroke();
+                }
+                move();
+
+            }
+        }
+    </script>
+    <script>
+        new DrawArc('.canvas', {
+            start: 0, //起始角度
+            radius: 180, //圆环的角度
+            bgcolor: "pink", //圆环颜色
+            fontColor: 'red', //字体颜色
+            lineWidth: 20, //宽20px
+            text: true //中间显示文字 false不显示文字
+        })
+    </script>
+</body>
+
+</html>

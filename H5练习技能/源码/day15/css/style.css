@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.column {
+  /*-webkit-column-count:10;*/
+  -webkit-column-width: 200px;
+  -webkit-column-rule: thick dotted #ccc;
+  -webkit-column-gap: 50px;
+}
+
+.column_span {
+  -webkit-column-count: 3;
+  -webkit-column-rule: thick dotted #ccc;
+  text-align: center;
+}
+.column_span p, .column_span h3, .column_span span {
+  background: red;
+}
+.column_span p {
+  -webkit-column-span: all;
+}
+
+/*# sourceMappingURL=style.css.map */

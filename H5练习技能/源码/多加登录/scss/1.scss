@@ -1,0 +1,139 @@
+    @import "common.scss";
+    @import "_minix.scss";
+    .wrap {
+        width: 100%;
+        height: 100%;
+        @include box_flex;
+        @include direction(column);
+        overflow: hidden;
+    }
+    
+    header {
+        width: 100%;
+        height: pxTorem(44px);
+        background: #1D1D28;
+        @include box_flex;
+        @include align(center);
+        span {
+            width: pxTorem(20px);
+            height: pxTorem(30px);
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            font-weight: 600;
+            line-height: pxTorem(30px);
+        }
+        h3 {
+            @include flex;
+            color: #fff;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+        }
+    }
+    
+    .banner {
+        width: 100%;
+        @include box_flex;
+        background: #1D1D28;
+        padding-top: pxTorem(20px);
+        @include sizing;
+        @include align(center);
+        @include direction(column);
+    }
+    
+    .title {
+        width: 100%;
+        @include box_flex;
+        background: #1D1D28;
+        padding-top: pxTorem(40px);
+        padding-bottom: pxTorem(20px);
+        @include sizing;
+        justify-content: space-between;
+        dl {
+            width: 50%;
+            text-align: center;
+            dd {
+                color: #fff;
+                padding-top: pxTorem(10px);
+                @include sizing;
+                position: relative;
+                i {
+                    width: 0;
+                    height: 0;
+                    border: pxTorem(7px) solid transparent;
+                    border-bottom-color: #fff;
+                    position: absolute;
+                    bottom: pxTorem(-20px);
+                    right: pxTorem(85px);
+                }
+            }
+        }
+    }
+    
+    section {
+        @include box_flex;
+        @include direction(column);
+        width: 100%;
+        height: 100%;
+        background: #1D1D28;
+    }
+    
+    .wei {
+        width: 100%;
+        height: 100%;
+        border: pxTorem(1px) solid #fff;
+        border-radius: pxTorem(15px) pxTorem(15px) 0 0;
+        @include flex;
+        @include box_flex;
+        @include direction(column);
+        background: #fff;
+        @include align(center);
+        .phone {
+            width: 70%;
+            justify-content: flex-start;
+            font-size: pxTorem(15px);
+            margin: pxTorem(15px) 0;
+            padding: pxTorem(5px) 0;
+            border-bottom: pxTorem(1px) solid #ccc;
+        }
+        .pass {
+            width: 70%;
+            font-size: pxTorem(15px);
+            margin: pxTorem(15px) 0;
+            justify-content: flex-start;
+            padding: pxTorem(5px) 0;
+            border-bottom: pxTorem(1px) solid #ccc;
+            button {
+                background: #fff;
+                border: none;
+                font-size: pxTorem(12px);
+                color: green;
+            }
+        }
+        .btn {
+            width: 70%;
+            background: #2CBB62;
+            border-radius: pxTorem(20px) pxTorem(20px) pxTorem(20px) pxTorem(20px);
+            height: pxTorem(40px);
+            text-align: center;
+            margin-top: pxTorem(15px);
+            line-height: pxTorem(40px);
+            button {
+                font-size: pxTorem(15px);
+                border: none;
+                background: #2CBB62;
+                color: #fff;
+            }
+        }
+        .zuce {
+            @include box_flex;
+            margin-top: pxTorem(20px);
+            width: 100%;
+            span {
+                width: 50%;
+                text-align: center;
+                font-size: pxTorem(15px);
+            }
+        }
+    }
